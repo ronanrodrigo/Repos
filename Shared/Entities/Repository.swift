@@ -12,4 +12,13 @@ public struct RepositoryEntity: Repository {
     public var owner: User
     public var stars: Int
     public var forks: Int
+
+    public init (name: String, description: String, owner: User, stars: Int, forks: Int) {
+        self.name = name
+        self.description = description
+        self.owner = owner
+        self.stars = stars
+        self.forks = forks
+    }
+
 }
