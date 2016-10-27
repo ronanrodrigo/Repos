@@ -1,0 +1,4 @@
+line_length: 150
+variable_name:
+  excluded:
+    - id
