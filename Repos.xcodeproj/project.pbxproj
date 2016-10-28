@@ -101,6 +101,7 @@
 			<key>children</key>
 			<array>
 				<string>346110691DC2C74200E02118</string>
+				<string>346110721DC2CE3900E02118</string>
 				<string>346110611DC2C27D00E02118</string>
 			</array>
 			<key>isa</key>
@@ -218,8 +219,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Networking</string>
 			<key>path</key>
 			<string>Networking</string>
 			<key>sourceTree</key>
@@ -262,6 +261,39 @@
 		<dict>
 			<key>fileRef</key>
 			<string>346110701DC2C8FA00E02118</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>346110721DC2CE3900E02118</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>346110731DC2CE6800E02118</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Networking</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>346110731DC2CE6800E02118</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>WebServiceFake.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>346110741DC2CE6800E02118</key>
+		<dict>
+			<key>fileRef</key>
+			<string>346110731DC2CE6800E02118</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -985,6 +1017,7 @@ fi</string>
 			<key>files</key>
 			<array>
 				<string>346110591DC2BE8E00E02118</string>
+				<string>346110741DC2CE6800E02118</string>
 				<string>346110641DC2C29600E02118</string>
 				<string>3461106B1DC2C75600E02118</string>
 			</array>
