@@ -27,7 +27,7 @@ class ListRepositoriesInteractorTests: XCTestCase {
     }
 
     func testNotListRepositoriesWhenAnErrorOcurrs() {
-        gateway.error = ErrorFake.error
+        webService.error = ErrorFake.error
         
         interactor.list()
 
