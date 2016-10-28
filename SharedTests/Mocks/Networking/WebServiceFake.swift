@@ -1,11 +1,11 @@
 import Shared
 
-class WebServiceFake: WebService {
+class WebServiceFake<U>: WebService {
 
-    var returnedEntity: A?
+    var returnedEntity: U?
 
-    func load<A>(resource: Resource<A>, completion: @escaping (A?) -> ()) {
-        completion(returnedEntity)
+    func load<T>(resource: Resource<T>, completion: @escaping (T?) -> ()) {
+        completion(returnedEntity as? T)
     }
 
 }

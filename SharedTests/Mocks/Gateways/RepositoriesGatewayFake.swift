@@ -7,7 +7,6 @@ class RepositoriesGatewayFake: RepositoriesGateway {
 
     init(webService: WebService) {
         self.webService = webService
-        self.error = NSError()
     }
 
     func list(completion: @escaping ([Repository]?, Error?) -> ()) {

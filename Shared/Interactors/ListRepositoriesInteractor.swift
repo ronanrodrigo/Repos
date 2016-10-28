@@ -12,6 +12,8 @@ public class ListRepositoriesInteractor {
         self.gateway.list { repositories, error in
             if let error = error {
                 self.presenter.displayError(message: error.localizedDescription)
+            } else if let repositories = repositories {
+                self.presenter.list(repositories: repositories)
             }
         }
     }
