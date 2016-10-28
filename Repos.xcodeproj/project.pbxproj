@@ -27,6 +27,7 @@
 		34DE19B21DC2B9E400D64C5B /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DE19B11DC2B9E400D64C5B /* Repository.swift */; };
 		34DE19B41DC2BBB200D64C5B /* PullRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DE19B31DC2BBB200D64C5B /* PullRequest.swift */; };
 		34FF87611DC4121F00D57587 /* ErrorFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF87601DC4121F00D57587 /* ErrorFake.swift */; };
+		34FF87661DC41BF500D57587 /* ListRepositoriesInteractorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF87651DC41BF500D57587 /* ListRepositoriesInteractorFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		34DE19B11DC2B9E400D64C5B /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		34DE19B31DC2BBB200D64C5B /* PullRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRequest.swift; sourceTree = "<group>"; };
 		34FF87601DC4121F00D57587 /* ErrorFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorFake.swift; sourceTree = "<group>"; };
+		34FF87651DC41BF500D57587 /* ListRepositoriesInteractorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRepositoriesInteractorFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 			children = (
 				34DE19A91DC2B1FC00D64C5B /* Base */,
 				34DE19AE1DC2B9B400D64C5B /* Entities */,
+				34FF87641DC41BDF00D57587 /* Factories */,
 				346110651DC2C66000E02118 /* Gateways */,
 				3461105A1DC2C1A000E02118 /* Interactors */,
 				3461106C1DC2C8D800E02118 /* Networking */,
@@ -291,6 +294,15 @@
 				34FF87601DC4121F00D57587 /* ErrorFake.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		34FF87641DC41BDF00D57587 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				34FF87651DC41BF500D57587 /* ListRepositoriesInteractorFactory.swift */,
+			);
+			name = Factories;
+			path = Factories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,6 +487,7 @@
 				34DE19B41DC2BBB200D64C5B /* PullRequest.swift in Sources */,
 				34DE19B01DC2B9C700D64C5B /* User.swift in Sources */,
 				346110681DC2C67000E02118 /* RepositoriesGateway.swift in Sources */,
+				34FF87661DC41BF500D57587 /* ListRepositoriesInteractorFactory.swift in Sources */,
 				34DE19B21DC2B9E400D64C5B /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
