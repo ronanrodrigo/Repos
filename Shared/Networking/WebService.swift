@@ -1,5 +1,6 @@
 public protocol WebService {
     func load<T>(resource: Resource<T>, completion: @escaping (T?, Error?) -> ())
+    func download(url: URL, completion: @escaping (Data?) -> ())
 }
 
 final class WebServiceSession: WebService {
@@ -11,6 +12,16 @@ final class WebServiceSession: WebService {
                 return
             }
             completion(resource.parse(data), error)
+        }.resume()
+    }
+
+    func download(url: URL, completion: @escaping (Data?) -> ()) {
+        URLSession.shared.downloadTask(with: url) {location, _, _ in
+            guard let location = location else {
+                completion(nil)
+                return
+            }
+            completion(try? Data(contentsOf: location))
         }.resume()
     }
 

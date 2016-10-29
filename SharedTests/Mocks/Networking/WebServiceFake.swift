@@ -9,4 +9,9 @@ class WebServiceFake<U>: WebService {
         completion(returnedEntity as? T, error)
     }
 
+    func download(url: URL, completion: @escaping (Data?) -> ()) {
+        guard let returnedEntity = returnedEntity as? Data else { return }
+        completion(returnedEntity)
+    }
+
 }
