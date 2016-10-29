@@ -163,6 +163,14 @@
                     <constraint firstItem="82P-FP-DbO" firstAttribute="leading" secondItem="F7z-l1-wsF" secondAttribute="trailing" id="weJ-Zn-PIf"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="ownerAvatar" destination="3lP-Xg-2lN" id="x8c-JK-f2n"/>
+                <outlet property="ownerLogin" destination="zZm-8j-9uQ" id="8X7-um-C6H"/>
+                <outlet property="repositoryDescription" destination="oRB-Ne-lul" id="ctc-af-WNB"/>
+                <outlet property="repositoryForks" destination="WhL-rU-Olg" id="TFY-lW-imd"/>
+                <outlet property="repositoryName" destination="qGW-Bf-zti" id="HGb-eG-BTS"/>
+                <outlet property="repositoryStars" destination="OT7-gD-hiy" id="zzg-Oa-fG9"/>
+            </connections>
             <point key="canvasLocation" x="34" y="104"/>
         </tableViewCell>
     </objects>

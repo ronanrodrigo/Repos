@@ -11,8 +11,8 @@ class ListRepositoriesDataSource: NSObject, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) {
-            cell.textLabel?.text = repositories[indexPath.row].name
+        if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? RepositoryTableViewCell {
+            cell.configure(repository: repositories[indexPath.row])
             return cell
         } else {
             return tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
