@@ -15,7 +15,9 @@ class ListRepositoriesPresenteriOS: ListRepositoriesPresenter {
     }
 
     func displayError(message: String) {
-        delegate.didDisplayError(message: message)
+        DispatchQueue.main.async {
+            self.delegate.didDisplayError(message: message)
+        }
     }
 
 }

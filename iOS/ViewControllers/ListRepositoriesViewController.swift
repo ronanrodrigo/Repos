@@ -35,10 +35,11 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
     func didList(repositories: [Repository]) {
         guard let dataSource = dataSource else { return }
         dataSource.repositories = dataSource.repositories + repositories
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
 
     func didDisplayError(message: String) {
+        tableView.isHidden = true
     }
 
 }
