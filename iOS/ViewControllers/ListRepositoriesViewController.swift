@@ -12,6 +12,7 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
 
     private var listRepositoriesInteractor: ListRepositoriesInteractor?
     private var dataSource: ListRepositoriesDataSource?
+    private var cellIdentifier = String(describing: RepositoryTableViewCell.self)
 
     override func viewDidLoad() {
         configureTableView()
@@ -20,8 +21,8 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
     }
 
     private func configureTableView() {
-        let cellNib = UINib(nibName: "RepositoryTableViewCell", bundle: nil)
-        tableView.register(cellNib, forCellReuseIdentifier: "RepositoryTableViewCell")
+        let cellNib = UINib(nibName: cellIdentifier, bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: cellIdentifier)
         dataSource = ListRepositoriesDataSource()
         tableView.dataSource = dataSource
     }
