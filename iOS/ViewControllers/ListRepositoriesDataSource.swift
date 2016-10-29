@@ -15,7 +15,7 @@ class ListRepositoriesDataSource: NSObject, UITableViewDataSource {
             cell.textLabel?.text = repositories[indexPath.row].name
             return cell
         } else {
-            return UITableViewCell()
+            return tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         }
     }
 
