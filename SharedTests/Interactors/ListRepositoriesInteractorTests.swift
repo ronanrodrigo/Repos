@@ -5,25 +5,14 @@ class ListRepositoriesInteractorTests: XCTestCase {
 
     var interactor: ListRepositoriesInteractor!
     var presenter: ListRepositoriesPresenterFake!
-    var gateway: RepositoriesGatewayFake!
+    var gateway: RepositoriesGateway!
     var webService: WebServiceFake<[Repository]>!
-    var user: User!
-    var repository: Repository!
 
     override func setUp() {
         webService = WebServiceFake()
-        gateway = RepositoriesGatewayFake(webService: webService)
+        gateway = RepositoriesGateway(webService: webService)
         presenter = ListRepositoriesPresenterFake()
         interactor = ListRepositoriesInteractor(gateway: gateway, presenter: presenter)
-        user = UserEntity(
-            name: "Facebook",
-            avatarUrl: URL(string: "https://avatars.githubusercontent.com/u/66577?v=3"))
-        repository = RepositoryEntity(
-            name: "Rective Native",
-            description: "Shit",
-            owner: user,
-            stars: 10,
-            forks: 10)
     }
 
     func testNotListRepositoriesWhenAnErrorOcurrs() {
@@ -36,12 +25,20 @@ class ListRepositoriesInteractorTests: XCTestCase {
     }
 
     func testListRepositoriesWhenHasRepositories() {
-        webService.returnedEntity = [repository]
-        
+        let user = UserEntity(name: "", avatarUrl: URL(string: "http://www.com.com"))
+        webService.returnedEntity = [RepositoryEntity(name: "", description: "", owner: user, stars: 1, forks: 1)]
+
         interactor.list()
 
         XCTAssertTrue(presenter.repositories.count > 0)
         XCTAssertNil(presenter.errorMessage)
+    }
+
+    func testDisplayErrorWheWithoutRepositoriesAndWithoutRequestError() {
+        interactor.list()
+
+        XCTAssertEqual(0, presenter.repositories.count)
+        XCTAssertNotNil(presenter.errorMessage)
     }
 
 }

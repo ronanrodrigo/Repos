@@ -1,10 +1,9 @@
 public class ListRepositoriesInteractorFactory {
-    
-    public static func make(presenter: ListRepositoriesPresenter) -> ListRepositoriesInteractor {
-        let webService = WebServiceSession()
-        let gateway = RepositoriesGatewayGithub(webService: webService)
 
-        return ListRepositoriesInteractor(gateway: gateway, presenter: presenter)
+    public static func make(presenter: ListRepositoriesPresenter) -> ListRepositoriesInteractor {
+        return ListRepositoriesInteractor(
+            gateway: RepositoriesGateway(webService: WebServiceSession()),
+            presenter: presenter)
     }
 
 }

@@ -25,8 +25,8 @@ public struct RepositoryEntity: Repository {
     public init?(dictionary: JSONDictionary) {
         guard let name = dictionary["name"] as? String,
             let description = dictionary["description"] as? String,
-            let stars = dictionary["stars"] as? Int,
-            let forks = dictionary["forks"] as? Int,
+            let stars = dictionary["stargazers_count"] as? Int,
+            let forks = dictionary["forks_count"] as? Int,
             let ownerDictionary = dictionary["owner"] as? JSONDictionary,
             let owner = UserEntity(dictionary: ownerDictionary) else { return nil }
 

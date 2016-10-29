@@ -14,10 +14,10 @@ public struct UserEntity: User {
     }
 
     public init?(dictionary: JSONDictionary) {
-        guard let name = dictionary["name"] as? String,
-            let avatarUrl = dictionary["avatar_url"] as? URL else { return nil }
+        guard let name = dictionary["login"] as? String,
+            let avatarUrlString = dictionary["avatar_url"] as? String else { return nil }
 
-        self.init(name: name, avatarUrl: avatarUrl)
+        self.init(name: name, avatarUrl: URL(string: avatarUrlString))
     }
 
 }

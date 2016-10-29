@@ -10,10 +10,12 @@ public class ListRepositoriesInteractor {
 
     public func list() {
         self.gateway.list { repositories, error in
-            if let error = error {
-                self.presenter.displayError(message: error.localizedDescription)
-            } else if let repositories = repositories {
+            if let repositories = repositories {
                 self.presenter.list(repositories: repositories)
+            } else if let error = error {
+                self.presenter.displayError(message: error.localizedDescription)
+            } else {
+                self.presenter.displayError(message: "")
             }
         }
     }

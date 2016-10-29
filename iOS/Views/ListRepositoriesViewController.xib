@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListRepositoriesViewController" customModule="iOS" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="HuM-hX-B9A" id="0kT-Uf-qx0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
