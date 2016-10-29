@@ -9,7 +9,9 @@ class ListRepositoriesPresenteriOS: ListRepositoriesPresenter {
     }
 
     func list(repositories: [Repository]) {
-        delegate.didList(repositories: repositories)
+        DispatchQueue.main.async {
+            self.delegate.didList(repositories: repositories)
+        }
     }
 
     func displayError(message: String) {

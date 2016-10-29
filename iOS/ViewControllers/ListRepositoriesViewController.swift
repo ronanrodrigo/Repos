@@ -34,10 +34,8 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
 
     func didList(repositories: [Repository]) {
         guard let dataSource = dataSource else { return }
-        DispatchQueue.main.async {
-            dataSource.repositories = dataSource.repositories + repositories
-            self.tableView.reloadData()
-        }
+        dataSource.repositories = dataSource.repositories + repositories
+        self.tableView.reloadData()
     }
 
     func didDisplayError(message: String) {
