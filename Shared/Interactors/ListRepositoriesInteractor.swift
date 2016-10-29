@@ -15,7 +15,7 @@ public class ListRepositoriesInteractor {
             } else if let error = error {
                 self.presenter.displayError(message: error.localizedDescription)
             } else {
-                self.presenter.displayError(message: "")
+                self.presenter.displayError(message: "Unknow error")
             }
         }
     }

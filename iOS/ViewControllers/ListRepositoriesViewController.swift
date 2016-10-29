@@ -9,6 +9,7 @@ protocol ListRepositoriesViewControllerDelegate {
 class ListRepositoriesViewController: UIViewController, ListRepositoriesViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var error: UILabel!
 
     private var listRepositoriesInteractor: ListRepositoriesInteractor?
     private var dataSource: ListRepositoriesDataSource?
@@ -37,10 +38,13 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
         guard let dataSource = dataSource else { return }
         dataSource.repositories = dataSource.repositories + repositories
         tableView.reloadData()
+        UIView.animate(withDuration: 0.5) {
+            self.error.alpha = 0
+        }
     }
 
     func didDisplayError(message: String) {
-        tableView.isHidden = true
+        error.text = message
     }
 
 }
