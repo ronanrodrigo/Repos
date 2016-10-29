@@ -18,6 +18,7 @@ public extension Resource {
 }
 
 public struct Resources {
+
     private static let baseUrl = "https://api.github.com"
 
     private static let listRepositoriesUrl = URL(string: "\(baseUrl)/search/repositories?q=language:Java&sort=stars&page=1")!
