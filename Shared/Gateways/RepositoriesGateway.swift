@@ -20,3 +20,19 @@ public extension RepositoriesGateway {
     }
 
 }
+
+public class RepositoriesGatewayGithub: RepositoriesGateway {
+    
+    public var webService: WebService
+    
+    public init(webService: WebService) {
+        self.webService = webService
+    }
+    
+    public func list(completion: @escaping ([Repository]?, Error?) -> ()) {
+        webService.load(resource: listResource) { repositories, error in
+            completion(repositories, error)
+        }
+    }
+
+}

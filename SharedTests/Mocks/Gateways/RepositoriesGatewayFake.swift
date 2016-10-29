@@ -9,9 +9,9 @@ class RepositoriesGatewayFake: RepositoriesGateway {
     }
 
     func list(completion: @escaping ([Repository]?, Error?) -> ()) {
-        webService.load(resource: listResource, completion: { repositories, error in
+        webService.load(resource: listResource) { repositories, error in
             completion(repositories, error)
-        })
+        }
     }
 
 }
