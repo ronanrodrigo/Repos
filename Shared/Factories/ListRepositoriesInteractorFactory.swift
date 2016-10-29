@@ -6,5 +6,5 @@ public class ListRepositoriesInteractorFactory {
 
         return ListRepositoriesInteractor(gateway: gateway, presenter: presenter)
     }
-    
+
 }

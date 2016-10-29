@@ -9,7 +9,7 @@ class ListRepositoriesInteractorTests: XCTestCase {
     var webService: WebServiceFake<[Repository]>!
     var user: User!
     var repository: Repository!
-    
+
     override func setUp() {
         webService = WebServiceFake()
         gateway = RepositoriesGatewayFake(webService: webService)
@@ -28,18 +28,18 @@ class ListRepositoriesInteractorTests: XCTestCase {
 
     func testNotListRepositoriesWhenAnErrorOcurrs() {
         webService.error = ErrorFake.error
-        
+
         interactor.list()
 
         XCTAssertEqual(0, presenter.repositories.count)
         XCTAssertNotNil(presenter.errorMessage)
     }
-    
+
     func testListRepositoriesWhenHasRepositories() {
         webService.returnedEntity = [repository]
         
         interactor.list()
-        
+
         XCTAssertTrue(presenter.repositories.count > 0)
         XCTAssertNil(presenter.errorMessage)
     }
