@@ -98,7 +98,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XrC-Ir-swO">
                                 <rect key="frame" x="8" y="10" width="42.5" height="15"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fork" translatesAutoresizingMaskIntoConstraints="NO" id="Jm0-W3-64l">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fork" translatesAutoresizingMaskIntoConstraints="NO" id="Jm0-W3-64l">
                                         <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="BWH-Md-Sqp"/>
@@ -114,7 +114,6 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XrC-Ir-swO" firstAttribute="leading" secondItem="F7z-l1-wsF" secondAttribute="leading" constant="8" id="8ZV-jH-B1s"/>
                             <constraint firstItem="XrC-Ir-swO" firstAttribute="centerY" secondItem="F7z-l1-wsF" secondAttribute="centerY" id="OLR-kX-KRi"/>
@@ -132,7 +131,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="z3S-Jc-ywU">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="z3S-Jc-ywU">
                                         <rect key="frame" x="27.5" y="0.0" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="15" id="D60-cc-bLT"/>
@@ -142,7 +141,6 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9U5-eO-3tE" firstAttribute="centerY" secondItem="82P-FP-DbO" secondAttribute="centerY" id="Xc0-s2-NEm"/>
                             <constraint firstAttribute="trailing" secondItem="9U5-eO-3tE" secondAttribute="trailing" constant="8" id="j6q-ag-IOf"/>
@@ -191,7 +189,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="fork" width="40" height="40"/>
-        <image name="star" width="40" height="40"/>
+        <image name="Fork" width="40" height="40"/>
+        <image name="Star" width="40" height="40"/>
     </resources>
 </document>
