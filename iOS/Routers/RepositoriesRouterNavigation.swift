@@ -11,7 +11,7 @@ class RepositoriesRouterNavigation: RepositoriesRouter {
 
     func list() {
         let listRepositoriesViewController = ListRepositoriesViewController()
-        listRepositoriesViewController.setStatusBarStyle(UIStatusBarStyle.lightContent)
+        listRepositoriesViewController.navigationItem.title = "Repos"
         navigationController.setStatusBarStyle(UIStatusBarStyle.lightContent)
         navigationController.viewControllers = [listRepositoriesViewController]
     }
