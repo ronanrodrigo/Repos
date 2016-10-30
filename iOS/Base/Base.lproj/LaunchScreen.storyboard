@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark" translatesAutoresizingMaskIntoConstraints="NO" id="94L-70-G2N">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bookmark" translatesAutoresizingMaskIntoConstraints="NO" id="94L-70-G2N">
                                 <rect key="frame" x="0.0" y="-1" width="375" height="230"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="230" id="vfa-LL-11F"/>
@@ -43,6 +43,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bookmark" width="186" height="381"/>
+        <image name="Bookmark" width="186" height="381"/>
     </resources>
 </document>
