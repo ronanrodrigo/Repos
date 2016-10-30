@@ -10,7 +10,11 @@ protocol ShowUserAvatarDelegate {
     func didGetAvatar(user: User, image: UIImage)
 }
 
-class ListRepositoriesViewController: UIViewController, ListRepositoriesViewControllerDelegate, ShowUserAvatarDelegate {
+protocol SelectRepositoryDelegate {
+    func didSelectedRepository(at row: Int)
+}
+
+class ListRepositoriesViewController: UIViewController, ListRepositoriesViewControllerDelegate, ShowUserAvatarDelegate, SelectRepositoryDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var error: UILabel!
@@ -18,6 +22,7 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
     private var getUserAvatarInteractor: GetUserAvatarInteractor!
     private var listRepositoriesInteractor: ListRepositoriesInteractor?
     private var dataSource: ListRepositoriesDataSource?
+    private var delegate: ListRepositoriesDelegate?
     private var cellIdentifier = String(describing: RepositoryTableViewCell.self)
 
     override func viewDidLoad() {
@@ -37,6 +42,8 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
         tableView.register(cellNib, forCellReuseIdentifier: cellIdentifier)
         dataSource = ListRepositoriesDataSource(getUserAvatarInteractor: getUserAvatarInteractor)
         tableView.dataSource = dataSource
+        delegate = ListRepositoriesDelegate(selectRepositoryDelegate: self)
+        tableView.delegate = delegate
     }
 
     private func configureListRepositoriesInteractor() {
@@ -64,6 +71,14 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
             else { return }
         dataSource.images[user.name] = image
         self.tableView.reloadRows(at: [IndexPath.init(row: rowToReload, section: 0)], with: .none)
+    }
+
+    func didSelectedRepository(at row: Int) {
+        guard let repository = dataSource?.repositories[row],
+            let navigationController = navigationController
+            else { return }
+        let router = RepositoriesRouterNavigation(navigationController: navigationController)
+        router.detail(repository: repository, userImage: dataSource?.images[repository.owner.name])
     }
 
 }

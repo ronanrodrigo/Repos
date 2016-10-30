@@ -31,6 +31,7 @@
 		34C176CE1DC60789001D9528 /* DetailRepositoryInteractorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176CD1DC60789001D9528 /* DetailRepositoryInteractorFactory.swift */; };
 		34C176D11DC6084E001D9528 /* DetailRepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176CF1DC6084E001D9528 /* DetailRepositoryViewController.swift */; };
 		34C176D21DC6084E001D9528 /* DetailRepositoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C176D01DC6084E001D9528 /* DetailRepositoryViewController.xib */; };
+		34C176D41DC6094A001D9528 /* ListRepositoriesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176D31DC6094A001D9528 /* ListRepositoriesDelegate.swift */; };
 		34DE19671DC2B03F00D64C5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DE19661DC2B03F00D64C5B /* AppDelegate.swift */; };
 		34DE196E1DC2B03F00D64C5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34DE196D1DC2B03F00D64C5B /* Assets.xcassets */; };
 		34DE19711DC2B03F00D64C5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DE196F1DC2B03F00D64C5B /* LaunchScreen.storyboard */; };
@@ -114,8 +115,9 @@
 		34C176C91DC60365001D9528 /* DetailRepositoryInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepositoryInteractorTests.swift; sourceTree = "<group>"; };
 		34C176CB1DC603CF001D9528 /* DetailRepositoryPresenterFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepositoryPresenterFake.swift; sourceTree = "<group>"; };
 		34C176CD1DC60789001D9528 /* DetailRepositoryInteractorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepositoryInteractorFactory.swift; sourceTree = "<group>"; };
-		34C176CF1DC6084E001D9528 /* DetailRepositoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailRepositoryViewController.swift; path = DetailRepositoryViewController.swift; sourceTree = "<group>"; };
+		34C176CF1DC6084E001D9528 /* DetailRepositoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepositoryViewController.swift; sourceTree = "<group>"; };
 		34C176D01DC6084E001D9528 /* DetailRepositoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailRepositoryViewController.xib; sourceTree = "<group>"; };
+		34C176D31DC6094A001D9528 /* ListRepositoriesDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRepositoriesDelegate.swift; sourceTree = "<group>"; };
 		34DE19631DC2B03F00D64C5B /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DE19661DC2B03F00D64C5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34DE196D1DC2B03F00D64C5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 			children = (
 				34C176CF1DC6084E001D9528 /* DetailRepositoryViewController.swift */,
 				34FF87771DC4243A00D57587 /* ListRepositoriesDataSource.swift */,
+				34C176D31DC6094A001D9528 /* ListRepositoriesDelegate.swift */,
 				34FF87691DC41E5500D57587 /* ListRepositoriesViewController.swift */,
 			);
 			path = ViewControllers;
@@ -581,6 +584,7 @@
 				34FF87781DC4243A00D57587 /* ListRepositoriesDataSource.swift in Sources */,
 				34C176C21DC569D9001D9528 /* GetUserAvatarPresenteriOS.swift in Sources */,
 				34C176B41DC5069F001D9528 /* UIView+IBInspectable.swift in Sources */,
+				34C176D41DC6094A001D9528 /* ListRepositoriesDelegate.swift in Sources */,
 				34FF877B1DC4262B00D57587 /* RepositoryTableViewCell.swift in Sources */,
 				34DE19671DC2B03F00D64C5B /* AppDelegate.swift in Sources */,
 				34FF87731DC41F5700D57587 /* RepositoriesRouterNavigation.swift in Sources */,
