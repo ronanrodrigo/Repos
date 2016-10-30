@@ -2,6 +2,7 @@ public protocol User {
     var name: String { get }
     var avatarUrl: URL? { get }
     init?(dictionary: JSONDictionary)
+    func isEqual(_ other: User) -> Bool
 }
 
 public struct UserEntity: User {
@@ -18,6 +19,11 @@ public struct UserEntity: User {
             let avatarUrlString = dictionary["avatar_url"] as? String else { return nil }
 
         self.init(name: name, avatarUrl: URL(string: avatarUrlString))
+    }
+
+    public func isEqual(_ other: User) -> Bool {
+        return self.avatarUrl == other.avatarUrl &&
+            self.name == other.name
     }
 
 }

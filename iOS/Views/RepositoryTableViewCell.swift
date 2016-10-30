@@ -9,6 +9,7 @@ class RepositoryTableViewCell: UITableViewCell {
     @IBOutlet weak var repositoryStars: UILabel!
     @IBOutlet weak var ownerLogin: UILabel!
     @IBOutlet weak var ownerAvatar: UIImageView!
+    @IBOutlet weak var loadingImage: UIActivityIndicatorView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,4 +23,13 @@ class RepositoryTableViewCell: UITableViewCell {
         ownerLogin.text = repository.owner.name
     }
 
+    func configure(image: UIImage) {
+        loadingImage.isHidden = true
+        ownerAvatar.image = image
+    }
+
+    override func prepareForReuse() {
+        loadingImage.isHidden = false
+        ownerAvatar.image = nil
+    }
 }

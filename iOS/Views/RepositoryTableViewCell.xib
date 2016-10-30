@@ -31,11 +31,14 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cL2-Yn-bZm">
                         <rect key="frame" x="232" y="8" width="80" height="80"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swift" translatesAutoresizingMaskIntoConstraints="NO" id="3lP-Xg-2lN">
-                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1w2-JM-AJu">
+                                <rect key="frame" x="30" y="30" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3lP-Xg-2lN">
+                                <rect key="frame" x="5" y="5" width="70" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="3jQ-Rl-308"/>
-                                    <constraint firstAttribute="height" constant="80" id="qGy-RS-NDI"/>
+                                    <constraint firstAttribute="width" constant="70" id="3jQ-Rl-308"/>
+                                    <constraint firstAttribute="height" constant="70" id="qGy-RS-NDI"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -45,7 +48,7 @@
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZm-8j-9uQ">
                                 <rect key="frame" x="8" y="52" width="64" height="20"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.34511451198630139" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="EoR-iU-SKg"/>
                                 </constraints>
@@ -64,9 +67,11 @@
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="80" id="3St-uu-EMO"/>
+                            <constraint firstItem="1w2-JM-AJu" firstAttribute="centerY" secondItem="cL2-Yn-bZm" secondAttribute="centerY" id="5dF-Mx-7MR"/>
                             <constraint firstItem="zZm-8j-9uQ" firstAttribute="leading" secondItem="cL2-Yn-bZm" secondAttribute="leading" constant="8" id="6QB-tJ-GtX"/>
                             <constraint firstAttribute="width" constant="80" id="6qb-XJ-l29"/>
                             <constraint firstItem="3lP-Xg-2lN" firstAttribute="centerX" secondItem="cL2-Yn-bZm" secondAttribute="centerX" id="S8K-h5-rAx"/>
+                            <constraint firstItem="1w2-JM-AJu" firstAttribute="centerX" secondItem="cL2-Yn-bZm" secondAttribute="centerX" id="Vnn-q6-EQG"/>
                             <constraint firstItem="3lP-Xg-2lN" firstAttribute="centerY" secondItem="cL2-Yn-bZm" secondAttribute="centerY" id="WPn-uh-Yue"/>
                             <constraint firstAttribute="bottom" secondItem="zZm-8j-9uQ" secondAttribute="bottom" constant="8" id="bV4-2c-L7B"/>
                             <constraint firstAttribute="trailing" secondItem="zZm-8j-9uQ" secondAttribute="trailing" constant="8" id="egE-Jx-CSF"/>
@@ -143,19 +148,29 @@
                             <constraint firstAttribute="trailing" secondItem="9U5-eO-3tE" secondAttribute="trailing" constant="8" id="j6q-ag-IOf"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qn6-Qr-BEm">
+                        <rect key="frame" x="0.0" y="138" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="2xc-If-NBf"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="F7z-l1-wsF" firstAttribute="top" secondItem="82P-FP-DbO" secondAttribute="top" id="AGy-6H-YE3"/>
                     <constraint firstItem="qGW-Bf-zti" firstAttribute="leading" secondItem="oRB-Ne-lul" secondAttribute="leading" id="BGj-w7-k4S"/>
                     <constraint firstAttribute="trailing" secondItem="cL2-Yn-bZm" secondAttribute="trailing" constant="8" id="CcX-IR-bdN"/>
                     <constraint firstAttribute="trailing" secondItem="82P-FP-DbO" secondAttribute="trailing" id="HHa-Yx-bsW"/>
+                    <constraint firstAttribute="bottom" secondItem="qn6-Qr-BEm" secondAttribute="bottom" id="PPg-MX-GY7"/>
                     <constraint firstItem="cL2-Yn-bZm" firstAttribute="leading" secondItem="oRB-Ne-lul" secondAttribute="trailing" constant="8" id="Sb0-RX-FPj"/>
                     <constraint firstItem="qGW-Bf-zti" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="So1-g2-zv3"/>
+                    <constraint firstItem="qn6-Qr-BEm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="XgV-Da-Uji"/>
                     <constraint firstItem="82P-FP-DbO" firstAttribute="leading" secondItem="F7z-l1-wsF" secondAttribute="leading" constant="160" id="ao2-wf-saI"/>
                     <constraint firstItem="cL2-Yn-bZm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="chD-hg-Gi8"/>
                     <constraint firstItem="cL2-Yn-bZm" firstAttribute="leading" secondItem="qGW-Bf-zti" secondAttribute="trailing" constant="8" id="f6P-iG-OHX"/>
                     <constraint firstAttribute="bottomMargin" secondItem="F7z-l1-wsF" secondAttribute="bottom" constant="-1" id="g72-AK-4v7"/>
                     <constraint firstItem="F7z-l1-wsF" firstAttribute="top" secondItem="oRB-Ne-lul" secondAttribute="bottom" constant="8" id="gSf-9p-DWA"/>
+                    <constraint firstAttribute="trailing" secondItem="qn6-Qr-BEm" secondAttribute="trailing" id="j5n-Oq-9OB"/>
                     <constraint firstItem="oRB-Ne-lul" firstAttribute="top" secondItem="qGW-Bf-zti" secondAttribute="bottom" constant="8" symbolic="YES" id="mS6-uS-iui"/>
                     <constraint firstItem="F7z-l1-wsF" firstAttribute="bottom" secondItem="82P-FP-DbO" secondAttribute="bottom" id="rXo-s6-mgA"/>
                     <constraint firstItem="qGW-Bf-zti" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="uQl-AF-g4o"/>
@@ -164,6 +179,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="loadingImage" destination="1w2-JM-AJu" id="zba-Lg-FPf"/>
                 <outlet property="ownerAvatar" destination="3lP-Xg-2lN" id="x8c-JK-f2n"/>
                 <outlet property="ownerLogin" destination="zZm-8j-9uQ" id="8X7-um-C6H"/>
                 <outlet property="repositoryDescription" destination="oRB-Ne-lul" id="ctc-af-WNB"/>
@@ -177,6 +193,5 @@
     <resources>
         <image name="fork" width="40" height="40"/>
         <image name="star" width="40" height="40"/>
-        <image name="swift" width="600" height="600"/>
     </resources>
 </document>
