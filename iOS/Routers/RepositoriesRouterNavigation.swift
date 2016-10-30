@@ -1,4 +1,5 @@
 import Shared
+import SafariServices
 
 class RepositoriesRouterNavigation: RepositoriesRouter {
 
@@ -26,6 +27,12 @@ class RepositoriesRouterNavigation: RepositoriesRouter {
         detailRepositoryViewController.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: userAvatar)
         detailRepositoryViewController.navigationItem.title = repository.name
         navigationController.pushViewController(detailRepositoryViewController, animated: true)
+    }
+
+    func open(url: URL) {
+        let safariViewController = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+        safariViewController.modalPresentationStyle = .overFullScreen
+        navigationController.present(safariViewController, animated: true, completion: nil)
     }
 
 }

@@ -1,5 +1,4 @@
 import UIKit
-import SafariServices
 import Shared
 
 protocol DetailRepositoryViewControllerDelegate {
@@ -75,10 +74,9 @@ class DetailRepositoryViewController: UIViewController, DetailRepositoryViewCont
     }
 
     func didSelectedPullRequest(at row: Int) {
-        guard let pullRequest = dataSource?.pullRequests[row] else { return }
-        let safariViewController = SFSafariViewController(url: pullRequest.url, entersReaderIfAvailable: true)
-        safariViewController.modalPresentationStyle = .overFullScreen
-        present(safariViewController, animated: true, completion: nil)
+        guard let pullRequest = dataSource?.pullRequests[row],
+            let navigationController = self.navigationController else { return }
+        RepositoriesRouterNavigation(navigationController: navigationController).open(url: pullRequest.url)
     }
 
 }
