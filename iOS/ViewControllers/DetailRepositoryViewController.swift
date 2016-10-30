@@ -1,9 +1,19 @@
 import UIKit
 import Shared
 
-class DetailRepositoryViewController: UIViewController {
+protocol DetailRepositoryViewControllerDelegate {
+    func didList(pullRequests: [PullRequest])
+}
 
-    var repository: Repository?
+class DetailRepositoryViewController: UIViewController, DetailRepositoryViewControllerDelegate, ShowUserAvatarDelegate {
+
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var error: UILabel!
+
+    private var repository: Repository?
+    private var dataSource: DetailRepositoryRepositorysDataSource?
+    private var cellIdentifier = String(describing: DetailRepositoryTableViewCell.self)
+    private var getUserAvatarInteractor: GetUserAvatarInteractor!
 
     init(repository: Repository) {
         self.repository = repository
@@ -15,7 +25,46 @@ class DetailRepositoryViewController: UIViewController {
     }
 
     override func viewDidLoad() {
+        configureGetUserAvatarInteractor()
+        configureTableView()
+        configureDetailRepositoryInteractor()
         super.viewDidLoad()
+    }
+
+    private func configureGetUserAvatarInteractor() {
+        let presenter = GetUserAvatarPresenteriOS(delegate: self)
+        getUserAvatarInteractor = GetUserAvatarInteractorFactory.make(presenter: presenter)
+    }
+
+    private func configureTableView() {
+        let cellNib = UINib(nibName: cellIdentifier, bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: cellIdentifier)
+        dataSource = DetailRepositoryRepositorysDataSource(getUserAvatarInteractor: getUserAvatarInteractor)
+        tableView.dataSource = dataSource
+    }
+
+    private func configureDetailRepositoryInteractor() {
+        guard let repository = repository else { return }
+        let presenter = DetailRepositoryPresenteriOS(delegate: self)
+        let interactor = DetailRepositoryInteractorFactory.make(presenter: presenter)
+        interactor.detail(repository: repository)
+    }
+
+    func didList(pullRequests: [PullRequest]) {
+        guard let dataSource = dataSource else { return }
+        dataSource.pullRequests = dataSource.pullRequests + pullRequests
+        tableView.reloadData()
+        UIView.animate(withDuration: 0.5) {
+            self.error.alpha = 0
+        }
+    }
+
+    func didGetAvatar(user: User, image: UIImage) {
+        guard let dataSource = dataSource,
+            let rowToReload = dataSource.pullRequests.index(where: {$0.user.isEqual(user)})
+            else { return }
+        dataSource.images[user.name] = image
+        self.tableView.reloadRows(at: [IndexPath.init(row: rowToReload, section: 0)], with: .none)
     }
 
 }

@@ -32,6 +32,10 @@
 		34C176D11DC6084E001D9528 /* DetailRepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176CF1DC6084E001D9528 /* DetailRepositoryViewController.swift */; };
 		34C176D21DC6084E001D9528 /* DetailRepositoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C176D01DC6084E001D9528 /* DetailRepositoryViewController.xib */; };
 		34C176D41DC6094A001D9528 /* ListRepositoriesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176D31DC6094A001D9528 /* ListRepositoriesDelegate.swift */; };
+		34C176D61DC60FFA001D9528 /* DetailRepositoryPresenteriOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176D51DC60FFA001D9528 /* DetailRepositoryPresenteriOS.swift */; };
+		34C176D81DC6115F001D9528 /* DetailRepositoryRepositorysDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176D71DC6115F001D9528 /* DetailRepositoryRepositorysDataSource.swift */; };
+		34C176DB1DC611E6001D9528 /* DetailRepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176D91DC611E6001D9528 /* DetailRepositoryTableViewCell.swift */; };
+		34C176DC1DC611E6001D9528 /* DetailRepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C176DA1DC611E6001D9528 /* DetailRepositoryTableViewCell.xib */; };
 		34DE19671DC2B03F00D64C5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DE19661DC2B03F00D64C5B /* AppDelegate.swift */; };
 		34DE196E1DC2B03F00D64C5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34DE196D1DC2B03F00D64C5B /* Assets.xcassets */; };
 		34DE19711DC2B03F00D64C5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DE196F1DC2B03F00D64C5B /* LaunchScreen.storyboard */; };
@@ -118,6 +122,10 @@
 		34C176CF1DC6084E001D9528 /* DetailRepositoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepositoryViewController.swift; sourceTree = "<group>"; };
 		34C176D01DC6084E001D9528 /* DetailRepositoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailRepositoryViewController.xib; sourceTree = "<group>"; };
 		34C176D31DC6094A001D9528 /* ListRepositoriesDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRepositoriesDelegate.swift; sourceTree = "<group>"; };
+		34C176D51DC60FFA001D9528 /* DetailRepositoryPresenteriOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepositoryPresenteriOS.swift; sourceTree = "<group>"; };
+		34C176D71DC6115F001D9528 /* DetailRepositoryRepositorysDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepositoryRepositorysDataSource.swift; sourceTree = "<group>"; };
+		34C176D91DC611E6001D9528 /* DetailRepositoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepositoryTableViewCell.swift; sourceTree = "<group>"; };
+		34C176DA1DC611E6001D9528 /* DetailRepositoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailRepositoryTableViewCell.xib; sourceTree = "<group>"; };
 		34DE19631DC2B03F00D64C5B /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DE19661DC2B03F00D64C5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34DE196D1DC2B03F00D64C5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -368,6 +376,8 @@
 				34FF87791DC4262B00D57587 /* RepositoryTableViewCell.swift */,
 				34FF877A1DC4262B00D57587 /* RepositoryTableViewCell.xib */,
 				34C176B31DC5069F001D9528 /* UIView+IBInspectable.swift */,
+				34C176D91DC611E6001D9528 /* DetailRepositoryTableViewCell.swift */,
+				34C176DA1DC611E6001D9528 /* DetailRepositoryTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -376,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				34C176CF1DC6084E001D9528 /* DetailRepositoryViewController.swift */,
+				34C176D71DC6115F001D9528 /* DetailRepositoryRepositorysDataSource.swift */,
 				34FF87771DC4243A00D57587 /* ListRepositoriesDataSource.swift */,
 				34C176D31DC6094A001D9528 /* ListRepositoriesDelegate.swift */,
 				34FF87691DC41E5500D57587 /* ListRepositoriesViewController.swift */,
@@ -404,6 +415,7 @@
 			children = (
 				34C176C11DC569D9001D9528 /* GetUserAvatarPresenteriOS.swift */,
 				34FF87751DC423DD00D57587 /* ListRepositoriesPresenteriOS.swift */,
+				34C176D51DC60FFA001D9528 /* DetailRepositoryPresenteriOS.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -534,6 +546,7 @@
 			files = (
 				34FF876C1DC41E5500D57587 /* ListRepositoriesViewController.xib in Resources */,
 				34DE19711DC2B03F00D64C5B /* LaunchScreen.storyboard in Resources */,
+				34C176DC1DC611E6001D9528 /* DetailRepositoryTableViewCell.xib in Resources */,
 				34C176D21DC6084E001D9528 /* DetailRepositoryViewController.xib in Resources */,
 				34DE196E1DC2B03F00D64C5B /* Assets.xcassets in Resources */,
 				34FF877C1DC4262B00D57587 /* RepositoryTableViewCell.xib in Resources */,
@@ -578,12 +591,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34C176DB1DC611E6001D9528 /* DetailRepositoryTableViewCell.swift in Sources */,
+				34C176D61DC60FFA001D9528 /* DetailRepositoryPresenteriOS.swift in Sources */,
 				34C176D11DC6084E001D9528 /* DetailRepositoryViewController.swift in Sources */,
 				34FF87761DC423DD00D57587 /* ListRepositoriesPresenteriOS.swift in Sources */,
 				34FF876B1DC41E5500D57587 /* ListRepositoriesViewController.swift in Sources */,
 				34FF87781DC4243A00D57587 /* ListRepositoriesDataSource.swift in Sources */,
 				34C176C21DC569D9001D9528 /* GetUserAvatarPresenteriOS.swift in Sources */,
 				34C176B41DC5069F001D9528 /* UIView+IBInspectable.swift in Sources */,
+				34C176D81DC6115F001D9528 /* DetailRepositoryRepositorysDataSource.swift in Sources */,
 				34C176D41DC6094A001D9528 /* ListRepositoriesDelegate.swift in Sources */,
 				34FF877B1DC4262B00D57587 /* RepositoryTableViewCell.swift in Sources */,
 				34DE19671DC2B03F00D64C5B /* AppDelegate.swift in Sources */,
