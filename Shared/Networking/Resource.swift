@@ -29,4 +29,11 @@ public struct Resources {
         return dictionaries.flatMap(RepositoryEntity.init)
     })
 
+    static func listPullRequests(url: URL) -> Resource<[PullRequest]> {
+        return Resource<[PullRequest]>(url: url, parseJSON: { json -> [PullRequest]? in
+            guard let dictionaries = json as? [JSONDictionary] else { return nil }
+            return dictionaries.flatMap(PullRequestEntity.init)
+        })
+    }
+
 }

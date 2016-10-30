@@ -23,6 +23,11 @@
 		34C176BE1DC565B7001D9528 /* GetUserAvatarPresenterFakeFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176BD1DC565B7001D9528 /* GetUserAvatarPresenterFakeFake.swift */; };
 		34C176C01DC567EA001D9528 /* GetUserAvatarInteractorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176BF1DC567EA001D9528 /* GetUserAvatarInteractorFactory.swift */; };
 		34C176C21DC569D9001D9528 /* GetUserAvatarPresenteriOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176C11DC569D9001D9528 /* GetUserAvatarPresenteriOS.swift */; };
+		34C176C41DC5FB71001D9528 /* DetailRepositoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176C31DC5FB71001D9528 /* DetailRepositoryInteractor.swift */; };
+		34C176C61DC5FC1F001D9528 /* PullRequestsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176C51DC5FC1F001D9528 /* PullRequestsGateway.swift */; };
+		34C176C81DC5FC36001D9528 /* DetailRepositoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176C71DC5FC36001D9528 /* DetailRepositoryPresenter.swift */; };
+		34C176CA1DC60365001D9528 /* DetailRepositoryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176C91DC60365001D9528 /* DetailRepositoryInteractorTests.swift */; };
+		34C176CC1DC603CF001D9528 /* DetailRepositoryPresenterFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176CB1DC603CF001D9528 /* DetailRepositoryPresenterFake.swift */; };
 		34DE19671DC2B03F00D64C5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DE19661DC2B03F00D64C5B /* AppDelegate.swift */; };
 		34DE196E1DC2B03F00D64C5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34DE196D1DC2B03F00D64C5B /* Assets.xcassets */; };
 		34DE19711DC2B03F00D64C5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DE196F1DC2B03F00D64C5B /* LaunchScreen.storyboard */; };
@@ -100,6 +105,11 @@
 		34C176BD1DC565B7001D9528 /* GetUserAvatarPresenterFakeFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserAvatarPresenterFakeFake.swift; sourceTree = "<group>"; };
 		34C176BF1DC567EA001D9528 /* GetUserAvatarInteractorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserAvatarInteractorFactory.swift; sourceTree = "<group>"; };
 		34C176C11DC569D9001D9528 /* GetUserAvatarPresenteriOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserAvatarPresenteriOS.swift; sourceTree = "<group>"; };
+		34C176C31DC5FB71001D9528 /* DetailRepositoryInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepositoryInteractor.swift; sourceTree = "<group>"; };
+		34C176C51DC5FC1F001D9528 /* PullRequestsGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRequestsGateway.swift; sourceTree = "<group>"; };
+		34C176C71DC5FC36001D9528 /* DetailRepositoryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepositoryPresenter.swift; sourceTree = "<group>"; };
+		34C176C91DC60365001D9528 /* DetailRepositoryInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepositoryInteractorTests.swift; sourceTree = "<group>"; };
+		34C176CB1DC603CF001D9528 /* DetailRepositoryPresenterFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepositoryPresenterFake.swift; sourceTree = "<group>"; };
 		34DE19631DC2B03F00D64C5B /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DE19661DC2B03F00D64C5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34DE196D1DC2B03F00D64C5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,6 +167,7 @@
 			children = (
 				34C176B51DC5164F001D9528 /* GetUserAvatarInteractor.swift */,
 				3461105B1DC2C1C700E02118 /* ListRepositoriesInteractor.swift */,
+				34C176C31DC5FB71001D9528 /* DetailRepositoryInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -166,6 +177,7 @@
 			children = (
 				34C176B91DC56415001D9528 /* GetUserAvatarPresenter.swift */,
 				3461105E1DC2C1EC00E02118 /* ListRepositoriesPresenter.swift */,
+				34C176C71DC5FC36001D9528 /* DetailRepositoryPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -185,6 +197,7 @@
 			children = (
 				34C176BD1DC565B7001D9528 /* GetUserAvatarPresenterFakeFake.swift */,
 				346110631DC2C29600E02118 /* ListRepositoriesPresenterFake.swift */,
+				34C176CB1DC603CF001D9528 /* DetailRepositoryPresenterFake.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -194,6 +207,7 @@
 			children = (
 				346110671DC2C67000E02118 /* RepositoriesGateway.swift */,
 				34C176B71DC53C47001D9528 /* UserGateway.swift */,
+				34C176C51DC5FC1F001D9528 /* PullRequestsGateway.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -315,6 +329,7 @@
 			children = (
 				34C176BB1DC56541001D9528 /* GetUserAvatarInteractorTests.swift */,
 				346110581DC2BE8E00E02118 /* ListRepositoriesInteractorTests.swift */,
+				34C176C91DC60365001D9528 /* DetailRepositoryInteractorTests.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -566,10 +581,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3461105F1DC2C1EC00E02118 /* ListRepositoriesPresenter.swift in Sources */,
+				34C176C41DC5FB71001D9528 /* DetailRepositoryInteractor.swift in Sources */,
 				346110711DC2C8FA00E02118 /* Resource.swift in Sources */,
 				3461105C1DC2C1C700E02118 /* ListRepositoriesInteractor.swift in Sources */,
 				3461106F1DC2C8EA00E02118 /* WebService.swift in Sources */,
 				34C176BA1DC56415001D9528 /* GetUserAvatarPresenter.swift in Sources */,
+				34C176C81DC5FC36001D9528 /* DetailRepositoryPresenter.swift in Sources */,
 				34C176B61DC5164F001D9528 /* GetUserAvatarInteractor.swift in Sources */,
 				34C176C01DC567EA001D9528 /* GetUserAvatarInteractorFactory.swift in Sources */,
 				34C176B81DC53C47001D9528 /* UserGateway.swift in Sources */,
@@ -579,6 +596,7 @@
 				346110681DC2C67000E02118 /* RepositoriesGateway.swift in Sources */,
 				34FF87661DC41BF500D57587 /* ListRepositoriesInteractorFactory.swift in Sources */,
 				34DE19B21DC2B9E400D64C5B /* Repository.swift in Sources */,
+				34C176C61DC5FC1F001D9528 /* PullRequestsGateway.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,8 +604,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34C176CC1DC603CF001D9528 /* DetailRepositoryPresenterFake.swift in Sources */,
 				34FF87611DC4121F00D57587 /* ErrorFake.swift in Sources */,
 				346110591DC2BE8E00E02118 /* ListRepositoriesInteractorTests.swift in Sources */,
+				34C176CA1DC60365001D9528 /* DetailRepositoryInteractorTests.swift in Sources */,
 				346110741DC2CE6800E02118 /* WebServiceFake.swift in Sources */,
 				34C176BC1DC56541001D9528 /* GetUserAvatarInteractorTests.swift in Sources */,
 				346110641DC2C29600E02118 /* ListRepositoriesPresenterFake.swift in Sources */,
