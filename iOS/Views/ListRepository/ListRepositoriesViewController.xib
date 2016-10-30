@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListRepositoriesViewController" customModule="iOS" customModuleProvider="target">
             <connections>
                 <outlet property="error" destination="8zT-2x-uEi" id="ycn-8X-JCz"/>
+                <outlet property="loaderBottom" destination="j5r-3x-bXa" id="Abz-Al-n6f"/>
                 <outlet property="tableView" destination="HuM-hX-B9A" id="0kT-Uf-qx0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -27,20 +28,28 @@
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zT-2x-uEi">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" red="0.74762727281403629" green="0.74666917755974882" blue="0.76340471518221242" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                     <size key="shadowOffset" width="-1" height="3"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rDL-jm-YOL">
+                    <rect key="frame" x="-1" y="0.0" width="376" height="667"/>
+                    <color key="backgroundColor" red="0.18198148906230927" green="0.69426733255386353" blue="0.53024792671203613" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="HuM-hX-B9A" secondAttribute="trailing" id="7wl-Uf-J4m"/>
                 <constraint firstAttribute="bottom" secondItem="HuM-hX-B9A" secondAttribute="bottom" id="Bnh-uB-xKF"/>
+                <constraint firstItem="rDL-jm-YOL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BxC-Aq-BOp"/>
                 <constraint firstItem="8zT-2x-uEi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EEI-gC-gu5"/>
                 <constraint firstItem="8zT-2x-uEi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FYG-Re-2fZ"/>
+                <constraint firstItem="rDL-jm-YOL" firstAttribute="width" secondItem="8zT-2x-uEi" secondAttribute="width" constant="1" id="L6e-no-7eV"/>
+                <constraint firstItem="rDL-jm-YOL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WUV-dO-fWi"/>
                 <constraint firstAttribute="bottom" secondItem="8zT-2x-uEi" secondAttribute="bottom" id="glI-ye-rnr"/>
+                <constraint firstAttribute="bottom" secondItem="rDL-jm-YOL" secondAttribute="bottom" id="j5r-3x-bXa"/>
                 <constraint firstAttribute="trailing" secondItem="8zT-2x-uEi" secondAttribute="trailing" id="lls-um-5gJ"/>
                 <constraint firstItem="HuM-hX-B9A" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vg1-pc-2zO"/>
                 <constraint firstItem="HuM-hX-B9A" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wAG-ho-Z3b"/>

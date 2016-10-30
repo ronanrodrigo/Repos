@@ -23,6 +23,7 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var error: UILabel!
+    @IBOutlet weak var loaderBottom: NSLayoutConstraint!
 
     private var currentPage = 1
     private var getUserAvatarInteractor: GetUserAvatarInteractor!
@@ -64,13 +65,19 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
         dataSource.repositories = dataSource.repositories + repositories
         tableView.reloadData()
         canLoadNextPage = true
-        UIView.animate(withDuration: 0.5) {
+
+        loaderBottom.constant = tableView.frame.height
+        animate {
+            self.loaderBottom.constant = self.tableView.frame.height
             self.error.alpha = 0
         }
     }
 
     func didDisplayError(message: String) {
         error.text = message
+        animate {
+            self.loaderBottom.constant = self.tableView.frame.height
+        }
     }
 
     func didGetAvatar(user: User, image: UIImage) {
@@ -93,6 +100,13 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
         canLoadNextPage = false
         currentPage = currentPage + 1
         listRepositoriesInteractor?.list(page: currentPage)
+    }
+
+    private func animate(animations: @escaping () -> ()) {
+        UIView.animate(withDuration: 0.2) {
+            animations()
+            self.view.layoutIfNeeded()
+        }
     }
 
 }

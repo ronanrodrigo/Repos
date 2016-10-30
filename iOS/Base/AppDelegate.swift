@@ -1,4 +1,5 @@
 import UIKit
+import ChameleonFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,6 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationController
 
         RepositoriesRouterNavigation(navigationController: navigationController).list()
+
+        Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatMint(), with: .contrast)
+        navigationController.hidesNavigationBarHairline = true
+        navigationController.navigationBar.isTranslucent = false
 
         return true
     }
