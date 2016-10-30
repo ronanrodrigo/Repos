@@ -36,6 +36,7 @@
 		34C176D81DC6115F001D9528 /* DetailRepositoryRepositorysDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176D71DC6115F001D9528 /* DetailRepositoryRepositorysDataSource.swift */; };
 		34C176DB1DC611E6001D9528 /* DetailRepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176D91DC611E6001D9528 /* DetailRepositoryTableViewCell.swift */; };
 		34C176DC1DC611E6001D9528 /* DetailRepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C176DA1DC611E6001D9528 /* DetailRepositoryTableViewCell.xib */; };
+		34C176E21DC61B8C001D9528 /* DetailRepositoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176E11DC61B8C001D9528 /* DetailRepositoryDelegate.swift */; };
 		34DE19671DC2B03F00D64C5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DE19661DC2B03F00D64C5B /* AppDelegate.swift */; };
 		34DE196E1DC2B03F00D64C5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34DE196D1DC2B03F00D64C5B /* Assets.xcassets */; };
 		34DE19711DC2B03F00D64C5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DE196F1DC2B03F00D64C5B /* LaunchScreen.storyboard */; };
@@ -126,6 +127,7 @@
 		34C176D71DC6115F001D9528 /* DetailRepositoryRepositorysDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepositoryRepositorysDataSource.swift; sourceTree = "<group>"; };
 		34C176D91DC611E6001D9528 /* DetailRepositoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		34C176DA1DC611E6001D9528 /* DetailRepositoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailRepositoryTableViewCell.xib; sourceTree = "<group>"; };
+		34C176E11DC61B8C001D9528 /* DetailRepositoryDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepositoryDelegate.swift; sourceTree = "<group>"; };
 		34DE19631DC2B03F00D64C5B /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DE19661DC2B03F00D64C5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34DE196D1DC2B03F00D64C5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -248,10 +250,10 @@
 		34C176DD1DC61A9D001D9528 /* DetailRepository */ = {
 			isa = PBXGroup;
 			children = (
+				34C176E11DC61B8C001D9528 /* DetailRepositoryDelegate.swift */,
 				34C176D71DC6115F001D9528 /* DetailRepositoryRepositorysDataSource.swift */,
 				34C176CF1DC6084E001D9528 /* DetailRepositoryViewController.swift */,
 			);
-			name = DetailRepository;
 			path = DetailRepository;
 			sourceTree = "<group>";
 		};
@@ -262,7 +264,6 @@
 				34C176D31DC6094A001D9528 /* ListRepositoriesDelegate.swift */,
 				34FF87691DC41E5500D57587 /* ListRepositoriesViewController.swift */,
 			);
-			name = ListRepositories;
 			path = ListRepositories;
 			sourceTree = "<group>";
 		};
@@ -273,7 +274,6 @@
 				34C176DA1DC611E6001D9528 /* DetailRepositoryTableViewCell.xib */,
 				34C176D01DC6084E001D9528 /* DetailRepositoryViewController.xib */,
 			);
-			name = DetailRepository;
 			path = DetailRepository;
 			sourceTree = "<group>";
 		};
@@ -284,7 +284,6 @@
 				34FF87791DC4262B00D57587 /* RepositoryTableViewCell.swift */,
 				34FF877A1DC4262B00D57587 /* RepositoryTableViewCell.xib */,
 			);
-			name = ListRepository;
 			path = ListRepository;
 			sourceTree = "<group>";
 		};
@@ -630,6 +629,7 @@
 				34C176DB1DC611E6001D9528 /* DetailRepositoryTableViewCell.swift in Sources */,
 				34C176D61DC60FFA001D9528 /* DetailRepositoryPresenteriOS.swift in Sources */,
 				34C176D11DC6084E001D9528 /* DetailRepositoryViewController.swift in Sources */,
+				34C176E21DC61B8C001D9528 /* DetailRepositoryDelegate.swift in Sources */,
 				34FF87761DC423DD00D57587 /* ListRepositoriesPresenteriOS.swift in Sources */,
 				34FF876B1DC41E5500D57587 /* ListRepositoriesViewController.swift in Sources */,
 				34FF87781DC4243A00D57587 /* ListRepositoriesDataSource.swift in Sources */,

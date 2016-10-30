@@ -1,17 +1,23 @@
 import UIKit
+import SafariServices
 import Shared
 
 protocol DetailRepositoryViewControllerDelegate {
     func didList(pullRequests: [PullRequest])
 }
 
-class DetailRepositoryViewController: UIViewController, DetailRepositoryViewControllerDelegate, ShowUserAvatarDelegate {
+protocol SelectPullRequestDelegate {
+    func didSelectedPullRequest(at row: Int)
+}
+
+class DetailRepositoryViewController: UIViewController, DetailRepositoryViewControllerDelegate, ShowUserAvatarDelegate, SelectPullRequestDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var error: UILabel!
 
     private var repository: Repository?
     private var dataSource: DetailRepositoryRepositorysDataSource?
+    private var delegate: DetailRepositoryDelegate?
     private var cellIdentifier = String(describing: DetailRepositoryTableViewCell.self)
     private var getUserAvatarInteractor: GetUserAvatarInteractor!
 
@@ -41,6 +47,8 @@ class DetailRepositoryViewController: UIViewController, DetailRepositoryViewCont
         tableView.register(cellNib, forCellReuseIdentifier: cellIdentifier)
         dataSource = DetailRepositoryRepositorysDataSource(getUserAvatarInteractor: getUserAvatarInteractor)
         tableView.dataSource = dataSource
+        delegate = DetailRepositoryDelegate(selectPullRequestDelegate: self)
+        tableView.delegate = delegate
     }
 
     private func configureDetailRepositoryInteractor() {
@@ -61,10 +69,16 @@ class DetailRepositoryViewController: UIViewController, DetailRepositoryViewCont
 
     func didGetAvatar(user: User, image: UIImage) {
         guard let dataSource = dataSource,
-            let rowToReload = dataSource.pullRequests.index(where: {$0.user.isEqual(user)})
-            else { return }
+            let rowToReload = dataSource.pullRequests.index(where: {$0.user.isEqual(user)}) else { return }
         dataSource.images[user.name] = image
         self.tableView.reloadRows(at: [IndexPath.init(row: rowToReload, section: 0)], with: .none)
+    }
+
+    func didSelectedPullRequest(at row: Int) {
+        guard let pullRequest = dataSource?.pullRequests[row] else { return }
+        let safariViewController = SFSafariViewController(url: pullRequest.url, entersReaderIfAvailable: true)
+        safariViewController.modalPresentationStyle = .overFullScreen
+        present(safariViewController, animated: true, completion: nil)
     }
 
 }
