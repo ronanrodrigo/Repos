@@ -62,7 +62,6 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Jfg-bs-k3T" firstAttribute="centerY" secondItem="9hK-CJ-MDQ" secondAttribute="centerY" id="9b7-Zv-e8X"/>
                             <constraint firstItem="Jfg-bs-k3T" firstAttribute="leading" secondItem="9hK-CJ-MDQ" secondAttribute="leadingMargin" id="x2N-Cj-SV9"/>
