@@ -14,7 +14,12 @@ protocol SelectRepositoryDelegate {
     func didSelectedRepository(at row: Int)
 }
 
-class ListRepositoriesViewController: UIViewController, ListRepositoriesViewControllerDelegate, ShowUserAvatarDelegate, SelectRepositoryDelegate {
+protocol InfiniteScrollDelegate {
+    var loadNextPage: Bool { get set }
+    func nextPage()
+}
+
+class ListRepositoriesViewController: UIViewController, ListRepositoriesViewControllerDelegate, ShowUserAvatarDelegate, SelectRepositoryDelegate, InfiniteScrollDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var error: UILabel!
@@ -25,6 +30,7 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
     private var dataSource: ListRepositoriesDataSource?
     private var delegate: ListRepositoriesDelegate?
     private var cellIdentifier = String(describing: RepositoryTableViewCell.self)
+    var loadNextPage: Bool = true
 
     override func viewDidLoad() {
         configureGetUserAvatarInteractor()
@@ -43,7 +49,7 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
         tableView.register(cellNib, forCellReuseIdentifier: cellIdentifier)
         dataSource = ListRepositoriesDataSource(getUserAvatarInteractor: getUserAvatarInteractor)
         tableView.dataSource = dataSource
-        delegate = ListRepositoriesDelegate(selectRepositoryDelegate: self)
+        delegate = ListRepositoriesDelegate(selectRepositoryDelegate: self, infiniteScrollDelegate: self)
         tableView.delegate = delegate
     }
 
@@ -57,6 +63,7 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
         guard let dataSource = dataSource else { return }
         dataSource.repositories = dataSource.repositories + repositories
         tableView.reloadData()
+        loadNextPage = true
         UIView.animate(withDuration: 0.5) {
             self.error.alpha = 0
         }
@@ -80,6 +87,12 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
             else { return }
         let router = RepositoriesRouterNavigation(navigationController: navigationController)
         router.detail(repository: repository, userImage: dataSource?.images[repository.owner.name])
+    }
+
+    func nextPage() {
+        loadNextPage = false
+        currentPage = currentPage + 1
+        listRepositoriesInteractor?.list(page: currentPage)
     }
 
 }
