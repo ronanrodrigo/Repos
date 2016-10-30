@@ -245,6 +245,49 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		34C176DD1DC61A9D001D9528 /* DetailRepository */ = {
+			isa = PBXGroup;
+			children = (
+				34C176D71DC6115F001D9528 /* DetailRepositoryRepositorysDataSource.swift */,
+				34C176CF1DC6084E001D9528 /* DetailRepositoryViewController.swift */,
+			);
+			name = DetailRepository;
+			path = DetailRepository;
+			sourceTree = "<group>";
+		};
+		34C176DE1DC61AAA001D9528 /* ListRepositories */ = {
+			isa = PBXGroup;
+			children = (
+				34FF87771DC4243A00D57587 /* ListRepositoriesDataSource.swift */,
+				34C176D31DC6094A001D9528 /* ListRepositoriesDelegate.swift */,
+				34FF87691DC41E5500D57587 /* ListRepositoriesViewController.swift */,
+			);
+			name = ListRepositories;
+			path = ListRepositories;
+			sourceTree = "<group>";
+		};
+		34C176DF1DC61ABA001D9528 /* DetailRepository */ = {
+			isa = PBXGroup;
+			children = (
+				34C176D91DC611E6001D9528 /* DetailRepositoryTableViewCell.swift */,
+				34C176DA1DC611E6001D9528 /* DetailRepositoryTableViewCell.xib */,
+				34C176D01DC6084E001D9528 /* DetailRepositoryViewController.xib */,
+			);
+			name = DetailRepository;
+			path = DetailRepository;
+			sourceTree = "<group>";
+		};
+		34C176E01DC61AC3001D9528 /* ListRepository */ = {
+			isa = PBXGroup;
+			children = (
+				34FF876A1DC41E5500D57587 /* ListRepositoriesViewController.xib */,
+				34FF87791DC4262B00D57587 /* RepositoryTableViewCell.swift */,
+				34FF877A1DC4262B00D57587 /* RepositoryTableViewCell.xib */,
+			);
+			name = ListRepository;
+			path = ListRepository;
+			sourceTree = "<group>";
+		};
 		34DE19331DC2AF5900D64C5B = {
 			isa = PBXGroup;
 			children = (
@@ -371,13 +414,9 @@
 		34FF87671DC41E1E00D57587 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				34C176D01DC6084E001D9528 /* DetailRepositoryViewController.xib */,
-				34FF876A1DC41E5500D57587 /* ListRepositoriesViewController.xib */,
-				34FF87791DC4262B00D57587 /* RepositoryTableViewCell.swift */,
-				34FF877A1DC4262B00D57587 /* RepositoryTableViewCell.xib */,
+				34C176DF1DC61ABA001D9528 /* DetailRepository */,
+				34C176E01DC61AC3001D9528 /* ListRepository */,
 				34C176B31DC5069F001D9528 /* UIView+IBInspectable.swift */,
-				34C176D91DC611E6001D9528 /* DetailRepositoryTableViewCell.swift */,
-				34C176DA1DC611E6001D9528 /* DetailRepositoryTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -385,11 +424,8 @@
 		34FF87681DC41E2200D57587 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				34C176CF1DC6084E001D9528 /* DetailRepositoryViewController.swift */,
-				34C176D71DC6115F001D9528 /* DetailRepositoryRepositorysDataSource.swift */,
-				34FF87771DC4243A00D57587 /* ListRepositoriesDataSource.swift */,
-				34C176D31DC6094A001D9528 /* ListRepositoriesDelegate.swift */,
-				34FF87691DC41E5500D57587 /* ListRepositoriesViewController.swift */,
+				34C176DD1DC61A9D001D9528 /* DetailRepository */,
+				34C176DE1DC61AAA001D9528 /* ListRepositories */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -413,9 +449,9 @@
 		34FF87741DC423D000D57587 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				34C176D51DC60FFA001D9528 /* DetailRepositoryPresenteriOS.swift */,
 				34C176C11DC569D9001D9528 /* GetUserAvatarPresenteriOS.swift */,
 				34FF87751DC423DD00D57587 /* ListRepositoriesPresenteriOS.swift */,
-				34C176D51DC60FFA001D9528 /* DetailRepositoryPresenteriOS.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
