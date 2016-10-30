@@ -15,7 +15,7 @@ protocol SelectRepositoryDelegate {
 }
 
 protocol InfiniteScrollDelegate {
-    var loadNextPage: Bool { get set }
+    var canLoadNextPage: Bool { get set }
     func nextPage()
 }
 
@@ -30,7 +30,7 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
     private var dataSource: ListRepositoriesDataSource?
     private var delegate: ListRepositoriesDelegate?
     private var cellIdentifier = String(describing: RepositoryTableViewCell.self)
-    var loadNextPage: Bool = true
+    var canLoadNextPage: Bool = true
 
     override func viewDidLoad() {
         configureGetUserAvatarInteractor()
@@ -63,7 +63,7 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
         guard let dataSource = dataSource else { return }
         dataSource.repositories = dataSource.repositories + repositories
         tableView.reloadData()
-        loadNextPage = true
+        canLoadNextPage = true
         UIView.animate(withDuration: 0.5) {
             self.error.alpha = 0
         }
@@ -90,7 +90,7 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
     }
 
     func nextPage() {
-        loadNextPage = false
+        canLoadNextPage = false
         currentPage = currentPage + 1
         listRepositoriesInteractor?.list(page: currentPage)
     }

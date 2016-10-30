@@ -20,7 +20,7 @@ class ListRepositoriesDelegate: NSObject, UITableViewDelegate {
         let scrollHeight = scrollView.contentSize.height
         let scrollPosition = scrollView.contentOffset.y
         let scrollPositionGreatherThanHalfPercent = scrollPosition >= scrollHeight * 0.5
-        if scrollHeight > 0 && scrollPositionGreatherThanHalfPercent && infiniteScrollDelegate.loadNextPage {
+        if scrollHeight > 0 && scrollPositionGreatherThanHalfPercent && infiniteScrollDelegate.canLoadNextPage {
             infiniteScrollDelegate.nextPage()
         }
     }
