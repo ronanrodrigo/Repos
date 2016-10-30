@@ -20,12 +20,28 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark" translatesAutoresizingMaskIntoConstraints="NO" id="XhZ-EY-a9t">
+                                <rect key="frame" x="0.0" y="-24" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Uxj-Ea-s2V"/>
+                                    <constraint firstAttribute="height" constant="100" id="ZzG-7p-Cqc"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="0.1819814891" green="0.69426733259999995" blue="0.53024792669999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="XhZ-EY-a9t" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Gc9-GH-uqa"/>
+                            <constraint firstItem="XhZ-EY-a9t" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="-24" id="f5o-Mx-xua"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bookmark" width="76" height="76"/>
+    </resources>
 </document>
