@@ -155,8 +155,8 @@
 		3461105A1DC2C1A000E02118 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
-				3461105B1DC2C1C700E02118 /* ListRepositoriesInteractor.swift */,
 				34C176B51DC5164F001D9528 /* GetUserAvatarInteractor.swift */,
+				3461105B1DC2C1C700E02118 /* ListRepositoriesInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -164,8 +164,8 @@
 		3461105D1DC2C1DE00E02118 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				3461105E1DC2C1EC00E02118 /* ListRepositoriesPresenter.swift */,
 				34C176B91DC56415001D9528 /* GetUserAvatarPresenter.swift */,
+				3461105E1DC2C1EC00E02118 /* ListRepositoriesPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -183,8 +183,8 @@
 		346110611DC2C27D00E02118 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				346110631DC2C29600E02118 /* ListRepositoriesPresenterFake.swift */,
 				34C176BD1DC565B7001D9528 /* GetUserAvatarPresenterFakeFake.swift */,
+				346110631DC2C29600E02118 /* ListRepositoriesPresenterFake.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -313,8 +313,8 @@
 		34DE19B51DC2BCB300D64C5B /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
-				346110581DC2BE8E00E02118 /* ListRepositoriesInteractorTests.swift */,
 				34C176BB1DC56541001D9528 /* GetUserAvatarInteractorTests.swift */,
+				346110581DC2BE8E00E02118 /* ListRepositoriesInteractorTests.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -330,8 +330,8 @@
 		34FF87641DC41BDF00D57587 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				34FF87651DC41BF500D57587 /* ListRepositoriesInteractorFactory.swift */,
 				34C176BF1DC567EA001D9528 /* GetUserAvatarInteractorFactory.swift */,
+				34FF87651DC41BF500D57587 /* ListRepositoriesInteractorFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -375,8 +375,8 @@
 		34FF87741DC423D000D57587 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				34FF87751DC423DD00D57587 /* ListRepositoriesPresenteriOS.swift */,
 				34C176C11DC569D9001D9528 /* GetUserAvatarPresenteriOS.swift */,
+				34FF87751DC423DD00D57587 /* ListRepositoriesPresenteriOS.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
