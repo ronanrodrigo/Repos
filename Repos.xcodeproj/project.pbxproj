@@ -29,6 +29,8 @@
 		34C176CA1DC60365001D9528 /* DetailRepositoryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176C91DC60365001D9528 /* DetailRepositoryInteractorTests.swift */; };
 		34C176CC1DC603CF001D9528 /* DetailRepositoryPresenterFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176CB1DC603CF001D9528 /* DetailRepositoryPresenterFake.swift */; };
 		34C176CE1DC60789001D9528 /* DetailRepositoryInteractorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176CD1DC60789001D9528 /* DetailRepositoryInteractorFactory.swift */; };
+		34C176D11DC6084E001D9528 /* DetailRepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C176CF1DC6084E001D9528 /* DetailRepositoryViewController.swift */; };
+		34C176D21DC6084E001D9528 /* DetailRepositoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C176D01DC6084E001D9528 /* DetailRepositoryViewController.xib */; };
 		34DE19671DC2B03F00D64C5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DE19661DC2B03F00D64C5B /* AppDelegate.swift */; };
 		34DE196E1DC2B03F00D64C5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34DE196D1DC2B03F00D64C5B /* Assets.xcassets */; };
 		34DE19711DC2B03F00D64C5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DE196F1DC2B03F00D64C5B /* LaunchScreen.storyboard */; };
@@ -112,6 +114,8 @@
 		34C176C91DC60365001D9528 /* DetailRepositoryInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepositoryInteractorTests.swift; sourceTree = "<group>"; };
 		34C176CB1DC603CF001D9528 /* DetailRepositoryPresenterFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepositoryPresenterFake.swift; sourceTree = "<group>"; };
 		34C176CD1DC60789001D9528 /* DetailRepositoryInteractorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepositoryInteractorFactory.swift; sourceTree = "<group>"; };
+		34C176CF1DC6084E001D9528 /* DetailRepositoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailRepositoryViewController.swift; path = DetailRepositoryViewController.swift; sourceTree = "<group>"; };
+		34C176D01DC6084E001D9528 /* DetailRepositoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailRepositoryViewController.xib; sourceTree = "<group>"; };
 		34DE19631DC2B03F00D64C5B /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DE19661DC2B03F00D64C5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34DE196D1DC2B03F00D64C5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -167,9 +171,9 @@
 		3461105A1DC2C1A000E02118 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
+				34C176C31DC5FB71001D9528 /* DetailRepositoryInteractor.swift */,
 				34C176B51DC5164F001D9528 /* GetUserAvatarInteractor.swift */,
 				3461105B1DC2C1C700E02118 /* ListRepositoriesInteractor.swift */,
-				34C176C31DC5FB71001D9528 /* DetailRepositoryInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -177,9 +181,9 @@
 		3461105D1DC2C1DE00E02118 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				34C176C71DC5FC36001D9528 /* DetailRepositoryPresenter.swift */,
 				34C176B91DC56415001D9528 /* GetUserAvatarPresenter.swift */,
 				3461105E1DC2C1EC00E02118 /* ListRepositoriesPresenter.swift */,
-				34C176C71DC5FC36001D9528 /* DetailRepositoryPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -197,9 +201,9 @@
 		346110611DC2C27D00E02118 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				34C176CB1DC603CF001D9528 /* DetailRepositoryPresenterFake.swift */,
 				34C176BD1DC565B7001D9528 /* GetUserAvatarPresenterFakeFake.swift */,
 				346110631DC2C29600E02118 /* ListRepositoriesPresenterFake.swift */,
-				34C176CB1DC603CF001D9528 /* DetailRepositoryPresenterFake.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -207,9 +211,9 @@
 		346110651DC2C66000E02118 /* Gateways */ = {
 			isa = PBXGroup;
 			children = (
+				34C176C51DC5FC1F001D9528 /* PullRequestsGateway.swift */,
 				346110671DC2C67000E02118 /* RepositoriesGateway.swift */,
 				34C176B71DC53C47001D9528 /* UserGateway.swift */,
-				34C176C51DC5FC1F001D9528 /* PullRequestsGateway.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -329,9 +333,9 @@
 		34DE19B51DC2BCB300D64C5B /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
+				34C176C91DC60365001D9528 /* DetailRepositoryInteractorTests.swift */,
 				34C176BB1DC56541001D9528 /* GetUserAvatarInteractorTests.swift */,
 				346110581DC2BE8E00E02118 /* ListRepositoriesInteractorTests.swift */,
-				34C176C91DC60365001D9528 /* DetailRepositoryInteractorTests.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -347,9 +351,9 @@
 		34FF87641DC41BDF00D57587 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
+				34C176CD1DC60789001D9528 /* DetailRepositoryInteractorFactory.swift */,
 				34C176BF1DC567EA001D9528 /* GetUserAvatarInteractorFactory.swift */,
 				34FF87651DC41BF500D57587 /* ListRepositoriesInteractorFactory.swift */,
-				34C176CD1DC60789001D9528 /* DetailRepositoryInteractorFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -357,6 +361,7 @@
 		34FF87671DC41E1E00D57587 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				34C176D01DC6084E001D9528 /* DetailRepositoryViewController.xib */,
 				34FF876A1DC41E5500D57587 /* ListRepositoriesViewController.xib */,
 				34FF87791DC4262B00D57587 /* RepositoryTableViewCell.swift */,
 				34FF877A1DC4262B00D57587 /* RepositoryTableViewCell.xib */,
@@ -368,6 +373,7 @@
 		34FF87681DC41E2200D57587 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				34C176CF1DC6084E001D9528 /* DetailRepositoryViewController.swift */,
 				34FF87771DC4243A00D57587 /* ListRepositoriesDataSource.swift */,
 				34FF87691DC41E5500D57587 /* ListRepositoriesViewController.swift */,
 			);
@@ -525,6 +531,7 @@
 			files = (
 				34FF876C1DC41E5500D57587 /* ListRepositoriesViewController.xib in Resources */,
 				34DE19711DC2B03F00D64C5B /* LaunchScreen.storyboard in Resources */,
+				34C176D21DC6084E001D9528 /* DetailRepositoryViewController.xib in Resources */,
 				34DE196E1DC2B03F00D64C5B /* Assets.xcassets in Resources */,
 				34FF877C1DC4262B00D57587 /* RepositoryTableViewCell.xib in Resources */,
 			);
@@ -568,6 +575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34C176D11DC6084E001D9528 /* DetailRepositoryViewController.swift in Sources */,
 				34FF87761DC423DD00D57587 /* ListRepositoriesPresenteriOS.swift in Sources */,
 				34FF876B1DC41E5500D57587 /* ListRepositoriesViewController.swift in Sources */,
 				34FF87781DC4243A00D57587 /* ListRepositoriesDataSource.swift in Sources */,
