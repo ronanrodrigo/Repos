@@ -32,7 +32,13 @@ class DetailRepositoryInteractorTests: XCTestCase {
     }
 
     func testListPullRequestsWhenHasPullRequests() {
-        webService.returnedEntity = [PullRequestEntity(title: "Title", user: user, createdAt: Date(), body: "Body")]
+        webService.returnedEntity = [PullRequestEntity(
+            title: "Title",
+            user: user,
+            createdAt: Date(),
+            body: "Body",
+            url: URL(string: "http://some.url")!
+        )]
 
         interactor.detail(repository: repository)
 

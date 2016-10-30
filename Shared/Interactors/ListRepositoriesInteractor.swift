@@ -8,8 +8,8 @@ public class ListRepositoriesInteractor {
         self.presenter = presenter
     }
 
-    public func list() {
-        self.gateway.list { repositories, error in
+    public func list(page: Int = 1) {
+        self.gateway.list(page: page) { repositories, error in
             if let repositories = repositories {
                 self.presenter.list(repositories: repositories)
             } else if let error = error {

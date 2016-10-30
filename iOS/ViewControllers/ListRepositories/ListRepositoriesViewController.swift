@@ -19,6 +19,7 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var error: UILabel!
 
+    private var currentPage = 1
     private var getUserAvatarInteractor: GetUserAvatarInteractor!
     private var listRepositoriesInteractor: ListRepositoriesInteractor?
     private var dataSource: ListRepositoriesDataSource?
