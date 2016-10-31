@@ -20,13 +20,9 @@ class DetailRepositoryViewController: UIViewController, DetailRepositoryViewCont
     private var cellIdentifier = String(describing: DetailRepositoryTableViewCell.self)
     private var getUserAvatarInteractor: GetUserAvatarInteractor!
 
-    init(repository: Repository) {
+    convenience init(repository: Repository) {
+        self.init()
         self.repository = repository
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
