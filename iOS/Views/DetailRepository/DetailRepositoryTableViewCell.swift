@@ -1,5 +1,4 @@
 import UIKit
-import ChameleonFramework
 import Shared
 
 class DetailRepositoryTableViewCell: UITableViewCell {
@@ -28,13 +27,9 @@ class DetailRepositoryTableViewCell: UITableViewCell {
     func configure(image: UIImage) {
         loadingImage.isHidden = true
         userAvatar.image = image
-        if let color = NSArray(ofColorsFrom: image, withFlatScheme: true).firstObject as? UIColor {
-            userName.backgroundColor = color
-        }
     }
 
     override func prepareForReuse() {
-        userName.backgroundColor = UIColor.white
         loadingImage.isHidden = false
         userAvatar.image = nil
     }
