@@ -31,5 +31,6 @@ class RepositoryTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         loadingImage.isHidden = false
         ownerAvatar.image = nil
+        isSelected = false
     }
 }

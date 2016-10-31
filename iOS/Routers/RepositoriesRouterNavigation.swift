@@ -34,6 +34,7 @@ class RepositoriesRouterNavigation: RepositoriesRouter {
     func open(url: URL) {
         let safariViewController = SFSafariViewController(url: url, entersReaderIfAvailable: true)
         safariViewController.modalPresentationStyle = .overFullScreen
+        safariViewController.preferredBarTintColor = UIColor.flatWhiteColorDark()
         navigationController.present(safariViewController, animated: true, completion: nil)
     }
 

@@ -32,6 +32,7 @@ class DetailRepositoryTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         loadingImage.isHidden = false
         userAvatar.image = nil
+        isSelected = false
     }
 
 }

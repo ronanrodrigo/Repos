@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         RepositoriesRouterNavigation(navigationController: navigationController).list()
 
-        Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatMint(), with: .contrast)
+        Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatMint(), withSecondaryColor: UIColor.clear, andContentStyle: .contrast)
         navigationController.hidesNavigationBarHairline = true
         navigationController.navigationBar.isTranslucent = false
 
