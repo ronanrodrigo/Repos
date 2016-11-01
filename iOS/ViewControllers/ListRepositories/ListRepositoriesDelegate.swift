@@ -13,7 +13,7 @@ class ListRepositoriesDelegate: NSObject, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectRepositoryDelegate.didSelectedRepository(at: indexPath.row)
-        tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

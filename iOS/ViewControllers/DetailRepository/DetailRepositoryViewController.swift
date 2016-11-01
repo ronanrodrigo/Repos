@@ -50,12 +50,14 @@ class DetailRepositoryViewController: UIViewController, DetailRepositoryViewCont
         guard let repository = repository else { return }
         let presenter = DetailRepositoryPresenteriOS(delegate: self)
         let interactor = DetailRepositoryInteractorFactory.make(presenter: presenter)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         interactor.detail(repository: repository)
     }
 
     func didList(pullRequests: [PullRequest]) {
         guard let dataSource = dataSource else { return }
         dataSource.pullRequests = dataSource.pullRequests + pullRequests
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         tableView.reloadData()
         UIView.animate(withDuration: 0.5) {
             self.error.alpha = 0
