@@ -35,7 +35,7 @@ class RepositoriesRouterNavigation: RepositoriesRouter {
     }
 
     private func addTitleInNavigation(at viewController: UIViewController, with text: String) {
-        viewController.navigationItem.title = "Repos"
+        viewController.navigationItem.title = text
 
     }
 
