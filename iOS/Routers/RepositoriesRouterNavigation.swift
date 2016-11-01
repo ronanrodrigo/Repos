@@ -22,7 +22,7 @@ class RepositoriesRouterNavigation: RepositoriesRouter {
 
     func detail(repository: Repository, userImage: UIImage?) {
         let detailRepositoryViewController = DetailRepositoryViewController(repository: repository)
-        let userAvatar = UIImageView(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
+        let userAvatar = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         userAvatar.image = userImage
         userAvatar.cornerRadius = 4.0
         userAvatar.clipsToBounds = true
