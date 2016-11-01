@@ -42,7 +42,7 @@ class DetailRepositoryViewController: UIViewController, DetailRepositoryViewCont
         tableView.register(cellNib, forCellReuseIdentifier: cellIdentifier)
         dataSource = GenericDataSource(getUserAvatarInteractor: getUserAvatarInteractor) { (pullRequest, cell) in
             cell.configure(pullRequest: pullRequest)
-            guard let image = self.dataSource?.images[pullRequest.user.name] else {
+            guard let dataSource = self.dataSource, let image = dataSource.images[pullRequest.user.name] else {
                 self.getUserAvatarInteractor.get(user: pullRequest.user); return
             }
             cell.configure(image: image)

@@ -50,7 +50,7 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
         tableView.register(cellNib, forCellReuseIdentifier: cellIdentifier)
         dataSource = GenericDataSource(getUserAvatarInteractor: getUserAvatarInteractor) { (repository, cell) in
             cell.configure(repository: repository)
-            guard let image = self.dataSource?.images[repository.owner.name] else {
+            guard let dataSource = self.dataSource, let image = dataSource.images[repository.owner.name] else {
                 self.getUserAvatarInteractor.get(user: repository.owner); return
             }
             cell.configure(image: image)
