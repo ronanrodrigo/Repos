@@ -15,7 +15,7 @@ class DetailRepositoryViewController: UIViewController, DetailRepositoryViewCont
     @IBOutlet weak var error: UILabel!
 
     private var repository: Repository?
-    private var dataSource: DetailRepositoryRepositorysDataSource?
+    private var dataSource: GenericDataSource<PullRequest, DetailRepositoryTableViewCell>?
     private var delegate: DetailRepositoryDelegate?
     private var cellIdentifier = String(describing: DetailRepositoryTableViewCell.self)
     private var getUserAvatarInteractor: GetUserAvatarInteractor!
@@ -40,7 +40,14 @@ class DetailRepositoryViewController: UIViewController, DetailRepositoryViewCont
     private func configureTableView() {
         let cellNib = UINib(nibName: cellIdentifier, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: cellIdentifier)
-        dataSource = DetailRepositoryRepositorysDataSource(getUserAvatarInteractor: getUserAvatarInteractor)
+        dataSource = GenericDataSource(getUserAvatarInteractor: getUserAvatarInteractor, configureCell: { (pullRequest, cell) in
+            cell.configure(pullRequest: pullRequest)
+            if let image = self.dataSource?.images[pullRequest.user.name] {
+                cell.configure(image: image)
+            } else {
+                self.getUserAvatarInteractor.get(user: pullRequest.user)
+            }
+        })
         tableView.dataSource = dataSource
         delegate = DetailRepositoryDelegate(selectPullRequestDelegate: self)
         tableView.delegate = delegate
@@ -56,7 +63,7 @@ class DetailRepositoryViewController: UIViewController, DetailRepositoryViewCont
 
     func didList(pullRequests: [PullRequest]) {
         guard let dataSource = dataSource else { return }
-        dataSource.pullRequests = dataSource.pullRequests + pullRequests
+        dataSource.objects = dataSource.objects + pullRequests
         tableView.reloadData()
         UIView.animate(withDuration: 0.5) {
             self.error.alpha = 0
@@ -65,13 +72,13 @@ class DetailRepositoryViewController: UIViewController, DetailRepositoryViewCont
 
     func didGetAvatar(user: User, image: UIImage) {
         guard let dataSource = dataSource,
-            let rowToReload = dataSource.pullRequests.index(where: {$0.user.isEqual(user)}) else { return }
+            let rowToReload = dataSource.objects.index(where: {$0.user.isEqual(user)}) else { return }
         dataSource.images[user.name] = image
         self.tableView.reloadRows(at: [IndexPath.init(row: rowToReload, section: 0)], with: .none)
     }
 
     func didSelectedPullRequest(at row: Int) {
-        guard let pullRequest = dataSource?.pullRequests[row],
+        guard let pullRequest = dataSource?.objects[row],
             let navigationController = self.navigationController else { return }
         RepositoriesRouterNavigation(navigationController: navigationController).open(url: pullRequest.url)
     }

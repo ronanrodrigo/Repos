@@ -28,7 +28,7 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
     private var currentPage = 1
     private var getUserAvatarInteractor: GetUserAvatarInteractor!
     private var listRepositoriesInteractor: ListRepositoriesInteractor?
-    private var dataSource: ListRepositoriesDataSource?
+    private var dataSource: GenericDataSource<Repository, RepositoryTableViewCell>?
     private var delegate: ListRepositoriesDelegate?
     private var cellIdentifier = String(describing: RepositoryTableViewCell.self)
     var canLoadNextPage: Bool = true
@@ -48,7 +48,14 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
     private func configureTableView() {
         let cellNib = UINib(nibName: cellIdentifier, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: cellIdentifier)
-        dataSource = ListRepositoriesDataSource(getUserAvatarInteractor: getUserAvatarInteractor)
+        dataSource = GenericDataSource(getUserAvatarInteractor: getUserAvatarInteractor, configureCell: { (repository, cell) in
+            cell.configure(repository: repository)
+            if let image = self.dataSource?.images[repository.owner.name] {
+                cell.configure(image: image)
+            } else {
+                self.getUserAvatarInteractor.get(user: repository.owner)
+            }
+        })
         tableView.dataSource = dataSource
         delegate = ListRepositoriesDelegate(selectRepositoryDelegate: self, infiniteScrollDelegate: self)
         tableView.delegate = delegate
@@ -63,7 +70,7 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
 
     func didList(repositories: [Repository]) {
         guard let dataSource = dataSource else { return }
-        dataSource.repositories = dataSource.repositories + repositories
+        dataSource.objects = dataSource.objects + repositories
         tableView.reloadData()
         canLoadNextPage = true
         loaderBottom.constant = tableView.frame.height
@@ -82,14 +89,14 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
 
     func didGetAvatar(user: User, image: UIImage) {
         guard let dataSource = dataSource,
-            let rowToReload = dataSource.repositories.index(where: {$0.owner.isEqual(user)})
+            let rowToReload = dataSource.objects.index(where: {$0.owner.isEqual(user)})
             else { return }
         dataSource.images[user.name] = image
         self.tableView.reloadRows(at: [IndexPath.init(row: rowToReload, section: 0)], with: .none)
     }
 
     func didSelectedRepository(at row: Int) {
-        guard let repository = dataSource?.repositories[row],
+        guard let repository = dataSource?.objects[row],
             let navigationController = navigationController
             else { return }
         let router = RepositoriesRouterNavigation(navigationController: navigationController)
