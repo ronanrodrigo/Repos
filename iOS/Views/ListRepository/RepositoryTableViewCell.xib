@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="139.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="139"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ropository name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGW-Bf-zti">
@@ -82,8 +82,12 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aenean placerat. In vulputate urna eu arcu. midunt sem sed arcu. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRB-Ne-lul">
-                        <rect key="frame" x="8" y="41" width="216" height="31.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRB-Ne-lul">
+                        <rect key="frame" x="8" y="41" width="216" height="47"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="47" id="2ow-M0-cM3"/>
+                        </constraints>
+                        <string key="text">Aenean placerat. In vulputate urna eu arcu. Aliquam erat volutpat. Suspendisse potenti. Morbi mattis felis at nunc. Duis viverra diam non justo. In nisl. Nullam sit amet magna in magna gravida vehicula. Mauris tincidunt sem sed arcu. </string>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -163,9 +167,9 @@
                     <constraint firstItem="cL2-Yn-bZm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="chD-hg-Gi8"/>
                     <constraint firstItem="cL2-Yn-bZm" firstAttribute="leading" secondItem="qGW-Bf-zti" secondAttribute="trailing" constant="8" id="f6P-iG-OHX"/>
                     <constraint firstAttribute="bottomMargin" secondItem="F7z-l1-wsF" secondAttribute="bottom" id="g72-AK-4v7"/>
+                    <constraint firstItem="F7z-l1-wsF" firstAttribute="top" secondItem="oRB-Ne-lul" secondAttribute="bottom" constant="8" id="gSf-9p-DWA"/>
                     <constraint firstAttribute="trailing" secondItem="qn6-Qr-BEm" secondAttribute="trailing" id="j5n-Oq-9OB"/>
                     <constraint firstItem="oRB-Ne-lul" firstAttribute="top" secondItem="qGW-Bf-zti" secondAttribute="bottom" constant="8" symbolic="YES" id="mS6-uS-iui"/>
-                    <constraint firstItem="F7z-l1-wsF" firstAttribute="top" secondItem="cL2-Yn-bZm" secondAttribute="bottom" constant="8" id="njE-dM-T55"/>
                     <constraint firstItem="F7z-l1-wsF" firstAttribute="bottom" secondItem="82P-FP-DbO" secondAttribute="bottom" id="rXo-s6-mgA"/>
                     <constraint firstItem="qGW-Bf-zti" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="uQl-AF-g4o"/>
                     <constraint firstItem="F7z-l1-wsF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="w0p-LZ-1f5"/>

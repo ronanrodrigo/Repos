@@ -24,7 +24,6 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var error: UILabel!
     @IBOutlet weak var loaderBottom: NSLayoutConstraint!
-    @IBOutlet weak var loaderHeight: NSLayoutConstraint!
 
     private var currentPage = 1
     private var getUserAvatarInteractor: GetUserAvatarInteractor!
@@ -75,7 +74,7 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
         canLoadNextPage = true
         loaderBottom.constant = tableView.frame.height
         animate {
-            self.loaderBottom.isActive = false
+            self.loaderBottom.constant = self.tableView.frame.height
             self.error.alpha = 0
         }
     }
