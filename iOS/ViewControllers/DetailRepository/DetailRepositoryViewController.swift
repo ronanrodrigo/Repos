@@ -57,7 +57,6 @@ class DetailRepositoryViewController: UIViewController, DetailRepositoryViewCont
     func didList(pullRequests: [PullRequest]) {
         guard let dataSource = dataSource else { return }
         dataSource.pullRequests = dataSource.pullRequests + pullRequests
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         tableView.reloadData()
         UIView.animate(withDuration: 0.5) {
             self.error.alpha = 0

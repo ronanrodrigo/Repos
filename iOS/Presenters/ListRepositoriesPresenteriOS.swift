@@ -10,12 +10,14 @@ class ListRepositoriesPresenteriOS: ListRepositoriesPresenter {
 
     func list(repositories: [Repository]) {
         DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             self.delegate.didList(repositories: repositories)
         }
     }
 
     func displayError(message: String) {
         DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             self.delegate.didDisplayError(message: message)
         }
     }

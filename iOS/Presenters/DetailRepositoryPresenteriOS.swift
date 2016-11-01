@@ -10,6 +10,7 @@ class DetailRepositoryPresenteriOS: DetailRepositoryPresenter {
 
     func list(pullRequests: [PullRequest]) {
         DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             self.delegate.didList(pullRequests: pullRequests)
         }
     }

@@ -66,7 +66,6 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
         dataSource.repositories = dataSource.repositories + repositories
         tableView.reloadData()
         canLoadNextPage = true
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         loaderBottom.constant = tableView.frame.height
         animate {
             self.loaderBottom.constant = self.tableView.frame.height
@@ -100,6 +99,7 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
     func nextPage() {
         canLoadNextPage = false
         currentPage = currentPage + 1
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         listRepositoriesInteractor?.list(page: currentPage)
     }
 
