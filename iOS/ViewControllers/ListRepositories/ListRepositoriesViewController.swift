@@ -48,14 +48,13 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
     private func configureTableView() {
         let cellNib = UINib(nibName: cellIdentifier, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: cellIdentifier)
-        dataSource = GenericDataSource(getUserAvatarInteractor: getUserAvatarInteractor, configureCell: { (repository, cell) in
+        dataSource = GenericDataSource(getUserAvatarInteractor: getUserAvatarInteractor) { (repository, cell) in
             cell.configure(repository: repository)
-            if let image = self.dataSource?.images[repository.owner.name] {
-                cell.configure(image: image)
-            } else {
-                self.getUserAvatarInteractor.get(user: repository.owner)
+            guard let image = self.dataSource?.images[repository.owner.name] else {
+                self.getUserAvatarInteractor.get(user: repository.owner); return
             }
-        })
+            cell.configure(image: image)
+        }
         tableView.dataSource = dataSource
         delegate = ListRepositoriesDelegate(selectRepositoryDelegate: self, infiniteScrollDelegate: self)
         tableView.delegate = delegate

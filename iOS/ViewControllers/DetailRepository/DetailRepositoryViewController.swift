@@ -40,14 +40,13 @@ class DetailRepositoryViewController: UIViewController, DetailRepositoryViewCont
     private func configureTableView() {
         let cellNib = UINib(nibName: cellIdentifier, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: cellIdentifier)
-        dataSource = GenericDataSource(getUserAvatarInteractor: getUserAvatarInteractor, configureCell: { (pullRequest, cell) in
+        dataSource = GenericDataSource(getUserAvatarInteractor: getUserAvatarInteractor) { (pullRequest, cell) in
             cell.configure(pullRequest: pullRequest)
-            if let image = self.dataSource?.images[pullRequest.user.name] {
-                cell.configure(image: image)
-            } else {
-                self.getUserAvatarInteractor.get(user: pullRequest.user)
+            guard let image = self.dataSource?.images[pullRequest.user.name] else {
+                self.getUserAvatarInteractor.get(user: pullRequest.user); return
             }
-        })
+            cell.configure(image: image)
+        }
         tableView.dataSource = dataSource
         delegate = DetailRepositoryDelegate(selectPullRequestDelegate: self)
         tableView.delegate = delegate
