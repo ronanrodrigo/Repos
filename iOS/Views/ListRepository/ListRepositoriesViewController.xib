@@ -35,8 +35,11 @@
                     <size key="shadowOffset" width="-1" height="3"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rDL-jm-YOL">
-                    <rect key="frame" x="-1" y="0.0" width="376" height="667"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" red="0.18198148906230927" green="0.69426733255386353" blue="0.53024792671203613" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="750" id="0io-TL-rMX"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -46,8 +49,8 @@
                 <constraint firstItem="rDL-jm-YOL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BxC-Aq-BOp"/>
                 <constraint firstItem="8zT-2x-uEi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EEI-gC-gu5"/>
                 <constraint firstItem="8zT-2x-uEi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FYG-Re-2fZ"/>
-                <constraint firstItem="rDL-jm-YOL" firstAttribute="width" secondItem="8zT-2x-uEi" secondAttribute="width" constant="1" id="L6e-no-7eV"/>
-                <constraint firstItem="rDL-jm-YOL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WUV-dO-fWi"/>
+                <constraint firstItem="rDL-jm-YOL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="KKQ-hf-Qfi"/>
+                <constraint firstAttribute="trailing" secondItem="rDL-jm-YOL" secondAttribute="trailing" id="TnV-NJ-iho"/>
                 <constraint firstAttribute="bottom" secondItem="8zT-2x-uEi" secondAttribute="bottom" id="glI-ye-rnr"/>
                 <constraint firstAttribute="bottom" secondItem="rDL-jm-YOL" secondAttribute="bottom" id="j5r-3x-bXa"/>
                 <constraint firstAttribute="trailing" secondItem="8zT-2x-uEi" secondAttribute="trailing" id="lls-um-5gJ"/>

@@ -72,9 +72,9 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
         dataSource.objects = dataSource.objects + repositories
         tableView.reloadData()
         canLoadNextPage = true
-        loaderBottom.constant = tableView.frame.height
+        guard let loaderBottom = loaderBottom else { return }
         animate {
-            self.loaderBottom.constant = self.tableView.frame.height
+            loaderBottom.isActive = false
             self.error.alpha = 0
         }
     }
