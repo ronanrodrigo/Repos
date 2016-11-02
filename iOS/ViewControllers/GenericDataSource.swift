@@ -19,12 +19,11 @@ class GenericDataSource<T, U: UITableViewCell>: NSObject, UITableViewDataSource 
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? U {
-            configureCell(objects[indexPath.row], cell)
-            return cell
-        } else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? U else {
             return tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         }
+        configureCell(objects[indexPath.row], cell)
+        return cell
     }
 
 }
