@@ -2,8 +2,9 @@
 engines:
   tailor:
     enabled: true
-  swiftlint:
-    enabled: true
+    checks:
+      redundant-optional-binding:
+        enabled: false
 ignore:
   - "Pods"
   - "SharedTests"
