@@ -1,0 +1,12 @@
+---
+engines:
+  tailor:
+    enabled: true
+  swiftlint:
+    enabled: true
+ignore:
+  - "Pods"
+  - "SharedTests"
+ratings:
+  paths:
+  - "**.swift"
