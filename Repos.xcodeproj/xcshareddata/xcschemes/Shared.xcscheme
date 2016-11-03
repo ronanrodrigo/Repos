@@ -29,7 +29,26 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "34DE19921DC2B1F300D64C5B"
+               BuildableName = "SharedTests.xctest"
+               BlueprintName = "SharedTests"
+               ReferencedContainer = "container:Repos.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "34DE198A1DC2B1F300D64C5B"
+            BuildableName = "Shared.framework"
+            BlueprintName = "Shared"
+            ReferencedContainer = "container:Repos.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
