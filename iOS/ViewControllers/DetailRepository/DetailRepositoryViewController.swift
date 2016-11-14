@@ -1,11 +1,11 @@
 import UIKit
 import Shared
 
-protocol DetailRepositoryViewControllerDelegate {
+protocol DetailRepositoryViewControllerDelegate: class {
     func didList(pullRequests: [PullRequest])
 }
 
-protocol SelectPullRequestDelegate {
+protocol SelectPullRequestDelegate: class {
     func didSelectedPullRequest(at row: Int)
 }
 

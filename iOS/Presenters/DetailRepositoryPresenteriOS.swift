@@ -2,7 +2,7 @@ import Shared
 
 class DetailRepositoryPresenteriOS: DetailRepositoryPresenter {
 
-    var delegate: DetailRepositoryViewControllerDelegate
+    private weak var delegate: DetailRepositoryViewControllerDelegate?
 
     init(delegate: DetailRepositoryViewControllerDelegate) {
         self.delegate = delegate
@@ -11,7 +11,7 @@ class DetailRepositoryPresenteriOS: DetailRepositoryPresenter {
     func list(pullRequests: [PullRequest]) {
         DispatchQueue.main.async {
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            self.delegate.didList(pullRequests: pullRequests)
+            self.delegate?.didList(pullRequests: pullRequests)
         }
     }
 

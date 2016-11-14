@@ -1,20 +1,20 @@
 import UIKit
 import Shared
 
-protocol ListRepositoriesViewControllerDelegate {
+protocol ListRepositoriesViewControllerDelegate: class {
     func didList(repositories: [Repository])
     func didDisplayError(message: String)
 }
 
-protocol ShowUserAvatarDelegate {
+protocol ShowUserAvatarDelegate: class {
     func didGetAvatar(user: User, image: UIImage)
 }
 
-protocol SelectRepositoryDelegate {
+protocol SelectRepositoryDelegate: class {
     func didSelectedRepository(at row: Int)
 }
 
-protocol InfiniteScrollDelegate {
+protocol InfiniteScrollDelegate: class {
     var canLoadNextPage: Bool { get set }
     func nextPage()
 }
