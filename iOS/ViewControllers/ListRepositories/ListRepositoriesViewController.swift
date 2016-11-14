@@ -82,7 +82,8 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
     func didDisplayError(message: String) {
         error.text = message
         animate {
-            self.loaderBottom.constant = self.tableView.frame.height
+            guard let loaderBottom = self.loaderBottom else { return }
+            loaderBottom.constant = self.tableView.frame.height
         }
     }
 
