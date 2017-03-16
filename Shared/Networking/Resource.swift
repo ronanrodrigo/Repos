@@ -21,7 +21,7 @@ public struct Resources {
 
     private static let baseUrl = "https://api.github.com"
 
-    private static let listRepositories = "\(baseUrl)/search/repositories?q=language:Java&sort=stars"
+    private static let listRepositories = "\(baseUrl)/search/repositories?q=language:Swift&sort=stars"
     static func listRepositories(page: Int = 1) -> Resource<[Repository]> {
         let listRepositoriesUrl = URL(string: listRepositories + "&page=\(page)")!
         return Resource<[Repository]>(url: listRepositoriesUrl, parseJSON: { json in
