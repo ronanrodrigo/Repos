@@ -110,7 +110,7 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
         listRepositoriesInteractor?.list(page: currentPage)
     }
 
-    private func animate(animations: @escaping () -> ()) {
+    private func animate(animations: @escaping () -> Void) {
         UIView.animate(withDuration: 0.2) {
             animations()
             self.view.layoutIfNeeded()

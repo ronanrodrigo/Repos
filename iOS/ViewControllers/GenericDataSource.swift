@@ -7,9 +7,9 @@ class GenericDataSource<T, U: UITableViewCell>: NSObject, UITableViewDataSource 
     var images: [String: UIImage] = [String: UIImage]()
     private var cellIdentifier = String(describing: U.self)
     private var getUserAvatarInteractor: GetUserAvatarInteractor
-    private var configureCell: (T, U) -> ()
+    private var configureCell: (T, U) -> Void
 
-    init(getUserAvatarInteractor: GetUserAvatarInteractor, configureCell: @escaping (T, U) -> ()) {
+    init(getUserAvatarInteractor: GetUserAvatarInteractor, configureCell: @escaping (T, U) -> Void) {
         self.getUserAvatarInteractor = getUserAvatarInteractor
         self.configureCell = configureCell
     }

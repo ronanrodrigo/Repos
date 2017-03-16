@@ -6,7 +6,7 @@ public struct PullRequestsGateway {
         self.webService = webService
     }
 
-    public func list(pullRequestsUrl: URL, completion: @escaping ([PullRequest]?, Error?) -> ()) {
+    public func list(pullRequestsUrl: URL, completion: @escaping ([PullRequest]?, Error?) -> Void) {
         webService.load(resource: Resources.listPullRequests(url: pullRequestsUrl)) { pullRequests, error in
             completion(pullRequests, error)
         }

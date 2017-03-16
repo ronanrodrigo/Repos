@@ -6,7 +6,7 @@ public struct UserGateway {
         self.webService = webService
     }
 
-    public func getAvatar(url: URL, completion: @escaping (Data?) -> ()) {
+    public func getAvatar(url: URL, completion: @escaping (Data?) -> Void) {
         webService.download(url: url) { data in
             completion(data)
         }
